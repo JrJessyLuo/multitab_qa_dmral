@@ -1,6 +1,6 @@
 # DMRAL
 
-This repository contains the code and benchmarks for the **DMRAL** framework, designed for numerical multi-table question answering (MTQA) in tabular data lakes.
+This repository contains the code and benchmarks for the **DMRAL** framework, designed for numerical multi-table question answering (MTQA) using tables in the wild.
 
 ---
 
