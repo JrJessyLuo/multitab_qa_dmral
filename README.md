@@ -8,15 +8,15 @@ This repository contains the code and benchmarks for the **DMRAL** framework, de
 
 We release two benchmarks to support evaluation:
 
-- [**SpiderDL**](https://zenodo.org/records/15486949)  
-- [**BirdDL**](https://zenodo.org/records/15488031)
+- [**SpiderWide**](https://zenodo.org/records/15486949)  
+- [**BirdWide**](https://zenodo.org/records/15488031)
 
-Each benchmark adapts an existing text-to-SQL dataset into a more realistic setting for multi-table analytical reasoning in data lakes.
+Each benchmark adapts an existing text-to-SQL dataset into a more realistic setting for multi-table analytical reasoning using tables in the wild.
 
 ### Setup
 
-- **Data Lake:**  
-  Download the benchmark files and place them in a `datalake` subdirectory within the corresponding dataset folder.
+- **Table collection:**  
+  Download the benchmark files and place them in a `tables` subdirectory within the corresponding dataset folder.
 
 - **Questions and Labels:**  
 The associated questions, relevant tables, and answers are located in the `dataset/label` directory. 
