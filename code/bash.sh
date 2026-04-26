@@ -1,11 +1,15 @@
 #!/bin/bash
 
-dataset_name='spiderdl'
+# set it as the path of the "code" directory 
+export PYTHONPATH=xx
+
+# set your dataset_name here, either spiderwild or birdwild
+dataset_name='xx'
 
 # Step into the preprocessing directory
 cd code/preprocessing
 python dump_raw_table.py --dataset "$dataset_name"
-python clean_table.py --dataset "$dataset_name"
+# python clean_table.py --dataset "$dataset_name"
 python table_join_rel.py --dataset "$dataset_name"
 python table_union_rel.py --dataset "$dataset_name"
 
@@ -13,7 +17,7 @@ python table_union_rel.py --dataset "$dataset_name"
 cd ../decomposer
 
 # Run query decomposition
-python contriever.py --dataset "$dataset_name" --query_decompose
+python contriever.py --dataset "$dataset_name" --query_decompose --mode full
 
 # Group information needs
 python group_information_needs.py --dataset "$dataset_name"

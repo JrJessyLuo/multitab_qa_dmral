@@ -1,0 +1,2102 @@
+[
+    [
+      "test takers:number",
+      "schools:location",
+      "schools:opening date",
+      "date range"
+    ],
+    [
+      "schools:type",
+      "county",
+      "county:name",
+      "schools:percent eligible free meals",
+      "grades"
+    ],
+    [
+      "accounts:issuance choice",
+      "accounts:region"
+    ],
+    [
+      "accounts:region",
+      "accounts:eligibility",
+      "loans"
+    ],
+    [
+      "customers:statement type",
+      "customers:status"
+    ],
+    [
+      "account:opened",
+      "customers:gender",
+      "customers:birth year",
+      "customers:location"
+    ],
+    [
+      "accounts:opened",
+      "location",
+      "year"
+    ],
+    [
+      "credit cards:level",
+      "credit cards:disposition"
+    ],
+    [
+      "accounts",
+      "district:name"
+    ],
+    [
+      "clients:gender",
+      "clients:accounts",
+      "region",
+      "region:name"
+    ],
+    [
+      "cards:type",
+      "cards:eligibility",
+      "loan"
+    ],
+    [
+      "clients:gender",
+      "district"
+    ],
+    [
+      "accounts:location",
+      "accounts:opening date",
+      "year"
+    ],
+    [
+      "customers:gender",
+      "customers:credit card type",
+      "credit card type:junior"
+    ],
+    [
+      "clients:statement type",
+      "clients:status"
+    ],
+    [
+      "molecules:non-carcinogenic",
+      "molecules:chlorine atoms"
+    ],
+    [
+      "molecule:sodium atoms",
+      "molecule:non-carcinogenic"
+    ],
+    [
+      "molecules:carcinogenic",
+      "molecules:element",
+      "element:bromine"
+    ],
+    [
+      "element:chlorine",
+      "molecules:carcinogenic",
+      "percentage"
+    ],
+    [
+      "molecules:bond type",
+      "molecules:carcinogenic status"
+    ],
+    [
+      "molecule:label",
+      "molecule:atoms",
+      "compounds:carcinogenic"
+    ],
+    [
+      "molecule:atoms",
+      "element:name",
+      "element:hydrogen",
+      "compound:carcinogenic"
+    ],
+    [
+      "bonds:count",
+      "atoms:bonding",
+      "element:chlorine"
+    ],
+    [
+      "molecules:sulphur element",
+      "molecules:double bond"
+    ],
+    [
+      "bond_id",
+      "elements"
+    ],
+    [
+      "molecules:carcinogenic",
+      "molecules:composition",
+      "molecules:Nitrogen"
+    ],
+    [
+      "molecules:double bonded oxygen",
+      "molecules:total number"
+    ],
+    [
+      "molecules:triple bonds",
+      "molecules:carcinogenic"
+    ],
+    [
+      "cards:future frame version",
+      "cards:legality status"
+    ],
+    [
+      "sets:block",
+      "sets:Italian translation"
+    ],
+    [
+      "superheroes:super power",
+      "super power:name"
+    ],
+    [
+      "superheroes:publisher",
+      "comics:publisher"
+    ],
+    [
+      "heroes:stealth power"
+    ],
+    [
+      "drivers:nationality",
+      "drivers:puncture status"
+    ],
+    [
+      "students:club",
+      "students:college"
+    ],
+    [
+      "students:club",
+      "event:name",
+      "students:T-shirt size",
+      "T-shirt:size"
+    ],
+    [
+      "members:Student_Club",
+      "majored:Environmental Engineering"
+    ],
+    [
+      "total average cost",
+      "person:name",
+      "events",
+      "month",
+      "month:September",
+      "month:October"
+    ],
+    [
+      "club members:major",
+      "club members:t-shirt size",
+      "t-shirt size:medium"
+    ],
+    [
+      "members:attendance",
+      "event:name"
+    ],
+    [
+      "members:Student_Club",
+      "members:major",
+      "major:Physics Teaching"
+    ],
+    [
+      "members:attendance",
+      "event:name",
+      "year"
+    ],
+    [
+      "members:Business",
+      "tee shirt:size"
+    ],
+    [
+      "members:education major",
+      "college",
+      "College of Education & Human Services"
+    ],
+    [
+      "students:amount paid",
+      "students:position",
+      "position:type"
+    ],
+    [
+      "stores:book",
+      "stores:location",
+      "state"
+    ],
+    [
+      "publishers:location",
+      "publishers:book price"
+    ],
+    [
+      "levels",
+      "Diego W Roel:position",
+      "max level"
+    ],
+    [
+      "store:location",
+      "sales:count"
+    ],
+    [
+      "company:name",
+      "location:name",
+      "rating:stars",
+      "date"
+    ],
+    [
+      "credit card:complaints",
+      "employee:name"
+    ],
+    [
+      "average:number of stars",
+      "clients:location",
+      "reviews"
+    ],
+    [
+      "clients:gender",
+      "clients:complaint",
+      "complaint:priority"
+    ],
+    [
+      "clients:location",
+      "clients:complaint outcome",
+      "city"
+    ],
+    [
+      "clients:age",
+      "clients:complaint type"
+    ],
+    [
+      "reviews:rating",
+      "reviews:location",
+      "product:name",
+      "city",
+      "state"
+    ],
+    [
+      "product:rating",
+      "reviews:percentage",
+      "division:East North Central"
+    ],
+    [
+      "movies:director of photography",
+      "person:name"
+    ],
+    [
+      "movies:director",
+      "movies:count",
+      "director:name"
+    ],
+    [
+      "movie:title",
+      "movie:keywords",
+      "total:number"
+    ],
+    [
+      "movies:production company",
+      "movies:count"
+    ],
+    [
+      "characters:gender",
+      "movie:title"
+    ],
+    [
+      "movie:title",
+      "movie:producers"
+    ],
+    [
+      "movies:keyword",
+      "movies:number"
+    ],
+    [
+      "movie:title",
+      "characters:gender",
+      "percentage"
+    ],
+    [
+      "movies:studio",
+      "movies:release count"
+    ],
+    [
+      "movies:release year",
+      "movies:director",
+      "director:name"
+    ],
+    [
+      "horror movies:count"
+    ],
+    [
+      "films:release date",
+      "films:actor"
+    ],
+    [
+      "movies:title",
+      "movies:keyword",
+      "movies:budget"
+    ],
+    [
+      "movies:keyword",
+      "movies:revenue"
+    ],
+    [
+      "revenues",
+      "film genre:Fantasy Films",
+      "film genre:Live Entertainment"
+    ],
+    [
+      "movies:genre",
+      "movies:revenue"
+    ],
+    [
+      "movies:production company",
+      "movies:count"
+    ],
+    [
+      "movies:language code",
+      "language code:value"
+    ],
+    [
+      "movies:average revenue",
+      "movies:country",
+      "country:name"
+    ],
+    [
+      "movies:keyword",
+      "movies:percentage"
+    ],
+    [
+      "movies:genre",
+      "movies:release year"
+    ],
+    [
+      "production companies:movie count",
+      "production companies:threshold"
+    ],
+    [
+      "movies:actor",
+      "movies:parental guidance"
+    ],
+    [
+      "movies:star",
+      "actor:gender",
+      "actor:ethnicity"
+    ],
+    [
+      "movies:count",
+      "actor:net worth",
+      "actor:role"
+    ],
+    [
+      "USA:actors",
+      "movie:title",
+      "movie:credit list",
+      "percentage"
+    ],
+    [
+      "actors:credit list",
+      "movie:title",
+      "actors:birth date",
+      "date"
+    ],
+    [
+      "romantic movies",
+      "movies:star",
+      "actor:name"
+    ],
+    [
+      "actors:gender",
+      "actors:birthplace",
+      "actors:film"
+    ],
+    [
+      "research assistants",
+      "person:name"
+    ],
+    [
+      "research assistants:average salary",
+      "person:name"
+    ],
+    [
+      "professors:research assistants",
+      "professors:gender",
+      "count"
+    ],
+    [
+      "students:course",
+      "students:status",
+      "students:level"
+    ],
+    [
+      "students:course",
+      "course:difficulty"
+    ],
+    [
+      "courses:count",
+      "student:name",
+      "student:first name",
+      "student:last name"
+    ],
+    [
+      "students:grade",
+      "course:name"
+    ],
+    [
+      "students:advisor",
+      "advisor:name"
+    ],
+    [
+      "students:salary",
+      "students:GPA"
+    ],
+    [
+      "students:grade",
+      "students:intelligence level"
+    ],
+    [
+      "students:salary",
+      "students:gpa",
+      "gpa:value"
+    ],
+    [
+      "professors:teachability",
+      "professors:student advisees",
+      "student advisees:salary"
+    ],
+    [
+      "students:satisfaction",
+      "course:name",
+      "students:gpa"
+    ],
+    [
+      "students:capability",
+      "students:undergraduate",
+      "students:research postgraduate",
+      "difference"
+    ],
+    [
+      "users",
+      "category",
+      "category:name",
+      "category:Home Decoration"
+    ],
+    [
+      "users:gender",
+      "devices:model"
+    ],
+    [
+      "users:category",
+      "category:type"
+    ],
+    [
+      "users:age",
+      "users:gender",
+      "events:participation",
+      "date"
+    ],
+    [
+      "app IDs",
+      "category",
+      "science fiction"
+    ],
+    [
+      "users:device",
+      "users:gender",
+      "device:model"
+    ],
+    [
+      "app users:category",
+      "category:name"
+    ],
+    [
+      "users:device",
+      "users:gender",
+      "users:age"
+    ],
+    [
+      "users:user group",
+      "users:device"
+    ],
+    [
+      "device:user",
+      "device:age"
+    ],
+    [
+      "users:category"
+    ],
+    [
+      "users:category",
+      "category:name"
+    ],
+    [
+      "users:gender",
+      "users:phone brand",
+      "total number"
+    ],
+    [
+      "users:gender",
+      "users:device model"
+    ],
+    [
+      "apps:name",
+      "apps:category"
+    ],
+    [
+      "users:device",
+      "users:group"
+    ],
+    [
+      "users:gender",
+      "devices:brand",
+      "devices:type"
+    ],
+    [
+      "users:gender",
+      "device:model"
+    ],
+    [
+      "app users:activity status",
+      "event:number",
+      "app users:categories"
+    ],
+    [
+      "events:count",
+      "device",
+      "user:gender",
+      "user:age"
+    ],
+    [
+      "devices:event",
+      "date",
+      "user:gender"
+    ],
+    [
+      "users:age",
+      "users:gender",
+      "device:name"
+    ],
+    [
+      "females:phone model",
+      "females:age group"
+    ],
+    [
+      "users:age",
+      "users:device model"
+    ],
+    [
+      "users:gender",
+      "users:device model"
+    ],
+    [
+      "users:gender",
+      "users:device model",
+      "device model:name"
+    ],
+    [
+      "users:age",
+      "users:device model"
+    ],
+    [
+      "users:age",
+      "users:device model"
+    ],
+    [
+      "users:gender",
+      "users:device brand"
+    ],
+    [
+      "users:age",
+      "users:phone brand"
+    ],
+    [
+      "people:age",
+      "people:phone model"
+    ],
+    [
+      "users:behavior category",
+      "comics"
+    ],
+    [
+      "users:gender",
+      "users:log of events",
+      "location:longitude"
+    ],
+    [
+      "apps:category"
+    ],
+    [
+      "users:gender",
+      "users:device"
+    ],
+    [
+      "keywords:count",
+      "season",
+      "episode",
+      "show:name"
+    ],
+    [
+      "episode:name",
+      "keywords"
+    ],
+    [
+      "nominations",
+      "show:title",
+      "season",
+      "episode"
+    ],
+    [
+      "awards:nominations",
+      "person:name"
+    ],
+    [
+      "episode:name",
+      "episode:keywords"
+    ],
+    [
+      "awards:nominations",
+      "person:name"
+    ],
+    [
+      "people:birthplace",
+      "people:award",
+      "year"
+    ],
+    [
+      "episode:title",
+      "episode:award"
+    ],
+    [
+      "awards",
+      "title",
+      "title:name"
+    ],
+    [
+      "episode:number",
+      "series:name",
+      "awards:type",
+      "year"
+    ],
+    [
+      "people:nationality",
+      "people:nominated",
+      "award"
+    ],
+    [
+      "allergies:count",
+      "person:name"
+    ],
+    [
+      "patients:ethnicity",
+      "patients:allergy",
+      "patients:total number"
+    ],
+    [
+      "individual:name",
+      "immunization:type",
+      "immunization:count"
+    ],
+    [
+      "patients:gender",
+      "patients:allergy",
+      "allergy:house dust mites"
+    ],
+    [
+      "women",
+      "medication:name",
+      "medication:dose"
+    ],
+    [
+      "date range",
+      "patients:race",
+      "patients:vaccine"
+    ],
+    [
+      "patients:gender",
+      "patients:immune status",
+      "vaccine:quadrivalent HPV"
+    ],
+    [
+      "orders:total price",
+      "orders:status"
+    ],
+    [
+      "Planes:orders"
+    ],
+    [
+      "customers:employee",
+      "employee:reports to",
+      "employee:name",
+      "sales representative"
+    ],
+    [
+      "sales representatives:location",
+      "offices:country"
+    ],
+    [
+      "counties",
+      "street:name"
+    ],
+    [
+      "restaurants:location",
+      "restaurants:rating",
+      "reviews:average"
+    ],
+    [
+      "restaurants:cuisine",
+      "restaurants:location"
+    ],
+    [
+      "restaurant:labels",
+      "restaurant:country"
+    ],
+    [
+      "restaurants:cuisine",
+      "restaurants:location",
+      "restaurants:label"
+    ],
+    [
+      "asian restaurants:location",
+      "restaurants:restaurant ID"
+    ],
+    [
+      "restaurants:type",
+      "location",
+      "area"
+    ],
+    [
+      "restaurants:type",
+      "location:Yosemite",
+      "location:Mono Lake"
+    ],
+    [
+      "database",
+      "Indian cities",
+      "South African cities",
+      "count"
+    ],
+    [
+      "cities:location",
+      "country"
+    ],
+    [
+      "release:name",
+      "release:tags"
+    ],
+    [
+      "releases:artist",
+      "releases:tag",
+      "artist:name",
+      "genre"
+    ],
+    [
+      "releases:year",
+      "releases:format",
+      "releases:genre"
+    ],
+    [
+      "singles:release year",
+      "singles:label"
+    ],
+    [
+      "albums:genre",
+      "albums:release year"
+    ],
+    [
+      "countries:series code",
+      "countries:income group"
+    ],
+    [
+      "countries:income level",
+      "countries:lending category",
+      "countries:series code"
+    ],
+    [
+      "countries:income group",
+      "countries:currency unit",
+      "countries:series code"
+    ],
+    [
+      "Aruba:footnotes",
+      "series code",
+      "year"
+    ],
+    [
+      "Aruba:footnote",
+      "series code",
+      "years:consecutive"
+    ],
+    [
+      "users:rating",
+      "users:gender"
+    ],
+    [
+      "movies:country",
+      "movies:user rating"
+    ],
+    [
+      "movies:country",
+      "movies:genre"
+    ],
+    [
+      "UK movies:rating",
+      "UK movies:running time"
+    ],
+    [
+      "female actors",
+      "movies:year"
+    ],
+    [
+      "action movies:country",
+      "action movies:language"
+    ],
+    [
+      "movies:divergent",
+      "movies:rating",
+      "movies:country"
+    ],
+    [
+      "users:gender",
+      "users:rating",
+      "movies:country"
+    ],
+    [
+      "average rating",
+      "action movies:country"
+    ],
+    [
+      "films:directed by",
+      "directors:best",
+      "films:average rating"
+    ],
+    [
+      "drama movie:rating",
+      "drama movie:count"
+    ],
+    [
+      "actors",
+      "films:US",
+      "films:UK"
+    ],
+    [
+      "directors:average revenue",
+      "directors:film genre",
+      "film genre:action",
+      "film genre:adventure"
+    ],
+    [
+      "American:comedy"
+    ],
+    [
+      "comedy films:rating",
+      "comedy films:number"
+    ],
+    [
+      "customers:ordered product",
+      "product:name",
+      "customers:type"
+    ],
+    [
+      "product:name",
+      "product:quantity"
+    ],
+    [
+      "customers:location",
+      "orders:quantity",
+      "product:name",
+      "product:type"
+    ],
+    [
+      "sales:total",
+      "product:name",
+      "region"
+    ],
+    [
+      "product:name",
+      "sales:total",
+      "location:west superstore"
+    ],
+    [
+      "furniture:products",
+      "orders:quantity",
+      "location:central superstore"
+    ],
+    [
+      "apps:installs",
+      "apps:comments",
+      "comments:sentiment"
+    ],
+    [
+      "comments:type",
+      "weather apps"
+    ],
+    [
+      "matches:season",
+      "matches:league",
+      "matches:result"
+    ],
+    [
+      "matches:count",
+      "league",
+      "time period:start year",
+      "time period:end year"
+    ],
+    [
+      "Away Victories",
+      "date",
+      "division"
+    ],
+    [
+      "Eredivisie:teams",
+      "year"
+    ],
+    [
+      "home win ratio",
+      "Bundesliga division",
+      "year"
+    ],
+    [
+      "Bundesliga:home victories",
+      "Premier League:home victories",
+      "season"
+    ],
+    [
+      "matches:final-time home-team goals",
+      "Bundesliga:division",
+      "season:2021"
+    ],
+    [
+      "players:league",
+      "players:position"
+    ],
+    [
+      "players:weight",
+      "players:award"
+    ],
+    [
+      "scenes",
+      "play:title"
+    ],
+    [
+      "character:name",
+      "story:chapters"
+    ],
+    [
+      "chapters",
+      "title",
+      "work"
+    ],
+    [
+      "chapters:name",
+      "character",
+      "relationship",
+      "Antonio",
+      "Bassiano"
+    ],
+    [
+      "comedy:title",
+      "comedy:acts"
+    ],
+    [
+      "Shakespeare's works",
+      "time period:start year",
+      "time period:end year",
+      "character:name"
+    ],
+    [
+      "cars:weight",
+      "cars:cost"
+    ],
+    [
+      "car models:introduction year",
+      "car models:origin country"
+    ],
+    [
+      "cars:acceleration",
+      "cars:cost"
+    ],
+    [
+      "car:acceleration",
+      "car:price"
+    ],
+    [
+      "car:price",
+      "car:swept volume"
+    ],
+    [
+      "cars:release",
+      "location:USA",
+      "year"
+    ],
+    [
+      "cars:engine displacement",
+      "cars:cost"
+    ],
+    [
+      "cars:origin",
+      "cars:acceleration time"
+    ],
+    [
+      "cars:horsepower",
+      "cars:production year"
+    ],
+    [
+      "teacher:total price",
+      "teacher:optional support",
+      "essay:title"
+    ],
+    [
+      "projects:donated amount",
+      "teacher:school",
+      "school:location"
+    ],
+    [
+      "action games:total"
+    ],
+    [
+      "games:publisher",
+      "games:genre",
+      "games:type"
+    ],
+    [
+      "games:sold",
+      "platform:DS",
+      "regions"
+    ],
+    [
+      "games:genre"
+    ],
+    [
+      "games:publisher"
+    ],
+    [
+      "games:publisher",
+      "games:count"
+    ],
+    [
+      "publishers:location",
+      "publishers:platform",
+      "publishers:year"
+    ],
+    [
+      "role-playing games:count"
+    ],
+    [
+      "games:genre"
+    ],
+    [
+      "games:published",
+      "publisher:name",
+      "publisher:Acclaim Entertainment"
+    ],
+    [
+      "games:sold",
+      "region",
+      "platform"
+    ],
+    [
+      "games:platform",
+      "wii"
+    ],
+    [
+      "publishers:name",
+      "games:title",
+      "games:starts with"
+    ],
+    [
+      "publishers:count",
+      "game:name"
+    ],
+    [
+      "games:sold",
+      "region",
+      "game platform:id"
+    ],
+    [
+      "games:genre",
+      "games:count"
+    ],
+    [
+      "games:sold",
+      "platform:PS3",
+      "region:Japan"
+    ],
+    [
+      "year",
+      "PS3 games:release"
+    ],
+    [
+      "shooter games:count"
+    ],
+    [
+      "game publisher:id",
+      "games:platform",
+      "X360"
+    ],
+    [
+      "game:ID",
+      "game:publisher"
+    ],
+    [
+      "games:genre"
+    ],
+    [
+      "games:release year",
+      "games:sales"
+    ],
+    [
+      "adventure games:release year",
+      "adventure games:total number"
+    ],
+    [
+      "games:platform",
+      "games:release year"
+    ],
+    [
+      "papers:count",
+      "authors:cooperation",
+      "university:name"
+    ],
+    [
+      "students:ethnicity",
+      "students:gender",
+      "students:graduation status",
+      "university:name"
+    ],
+    [
+      "Yelp:business",
+      "Yelp:buffets",
+      "Yelp:gyms"
+    ],
+    [
+      "Yelp_Businesses:alcohol"
+    ],
+    [
+      "Yelp_Business:closing time",
+      "Yelp_Business:day"
+    ],
+    [
+      "businesses:ambiance"
+    ],
+    [
+      "businesses:accept insurance"
+    ],
+    [
+      "Yelp businesses:category",
+      "businesses:percentage"
+    ],
+    [
+      "Yelp businesses:category",
+      "Yelp businesses:count"
+    ],
+    [
+      "business:attribute name",
+      "business:percentage"
+    ],
+    [
+      "business:number",
+      "category:Men's Clothing",
+      "category:Women's Clothing"
+    ],
+    [
+      "business:shopping category",
+      "business:pets category",
+      "ratio"
+    ],
+    [
+      "businesses:registration",
+      "businesses:category"
+    ],
+    [
+      "businesses:registration",
+      "businesses:attribute",
+      "attribute:name"
+    ],
+    [
+      "business:attribute",
+      "business:number"
+    ],
+    [
+      "businesses:ambience",
+      "businesses:trendy"
+    ],
+    [
+      "word:cited",
+      "class:label",
+      "class:value"
+    ],
+    [
+      "papers:citation",
+      "author",
+      "identifier"
+    ],
+    [
+      "papers:classification",
+      "papers:citation",
+      "algorithm"
+    ],
+    [
+      "episode:air date",
+      "episode:keywords"
+    ],
+    [
+      "students:department",
+      "students:payment due"
+    ],
+    [
+      "students:university",
+      "students:enlistment",
+      "organization"
+    ],
+    [
+      "students:SMC",
+      "students:absence duration"
+    ],
+    [
+      "students:unemployed",
+      "students:disabled",
+      "ratio"
+    ],
+    [
+      "students:enlistment",
+      "organization:name",
+      "school:name"
+    ],
+    [
+      "students:disabled",
+      "students:unemployed"
+    ],
+    [
+      "students:disability status",
+      "students:gender"
+    ],
+    [
+      "students:absences",
+      "students:enlistment",
+      "department"
+    ],
+    [
+      "students:unemployed",
+      "students:disabled"
+    ],
+    [
+      "users:belief",
+      "users:productivity",
+      "users:mental health issue",
+      "overall"
+    ],
+    [
+      "users:participation",
+      "survey:mental health",
+      "year"
+    ],
+    [
+      "users:location",
+      "survey:year"
+    ],
+    [
+      "survey:year",
+      "users:mental health disorder"
+    ],
+    [
+      "users:response",
+      "question",
+      "years"
+    ],
+    [
+      "users:mental disorder",
+      "survey:year",
+      "rate of increase"
+    ],
+    [
+      "surveys:question"
+    ],
+    [
+      "users:participation",
+      "survey:mental health",
+      "year"
+    ],
+    [
+      "question:answers",
+      "conversation:previous employer",
+      "mental health",
+      "reactions",
+      "actions taken"
+    ],
+    [
+      "US state or territory",
+      "people:response",
+      "response:value"
+    ],
+    [
+      "people:comments",
+      "question:text"
+    ],
+    [
+      "users:diagnosis",
+      "users:response",
+      "question"
+    ],
+    [
+      "users:survey",
+      "year"
+    ],
+    [
+      "users:answered",
+      "question:importance",
+      "question:employer",
+      "question:physical health"
+    ],
+    [
+      "users:survey",
+      "year",
+      "users:number"
+    ],
+    [
+      "respondents:survey",
+      "year",
+      "work:remote",
+      "work:percentage"
+    ],
+    [
+      "movies:director",
+      "movies:genre",
+      "movies:count"
+    ],
+    [
+      "movies:director",
+      "movies:genre",
+      "director:name",
+      "genre:type"
+    ],
+    [
+      "senators:gender",
+      "representatives:gender",
+      "birth year"
+    ],
+    [
+      "Olympic:competitors",
+      "country",
+      "Finland"
+    ],
+    [
+      "London:Olympic games"
+    ],
+    [
+      "events:type",
+      "events:sport"
+    ],
+    [
+      "athletes:database",
+      "athletes:country",
+      "country:name"
+    ],
+    [
+      "athlete:name",
+      "medals:type",
+      "medals:count"
+    ],
+    [
+      "athletes:country"
+    ],
+    [
+      "males",
+      "Belgium",
+      "participation",
+      "Olympic Games"
+    ],
+    [
+      "persons:participation",
+      "event:Sapporo Olympics"
+    ],
+    [
+      "persons:participation",
+      "competitions:type",
+      "competitions:size"
+    ],
+    [
+      "events:sport",
+      "events:type",
+      "events:count"
+    ],
+    [
+      "gold medals",
+      "winners",
+      "event",
+      "Ice Hockey",
+      "Men's Ice Hockey"
+    ],
+    [
+      "Olympic games:location",
+      "Olympic games:count"
+    ],
+    [
+      "athletes:age",
+      "athletes:sport",
+      "athletes:event"
+    ],
+    [
+      "people:gold medal",
+      "event:name"
+    ],
+    [
+      "events:kinds",
+      "sport",
+      "cycling"
+    ],
+    [
+      "athletics:events"
+    ],
+    [
+      "games:host",
+      "location",
+      "time period:start",
+      "time period:end"
+    ],
+    [
+      "Belgian men",
+      "Olympic Games"
+    ],
+    [
+      "athletes:participation",
+      "event:Olympic games",
+      "location:Barcelona"
+    ],
+    [
+      "football events"
+    ],
+    [
+      "city",
+      "Olympic games"
+    ],
+    [
+      "households:total",
+      "county:name"
+    ],
+    [
+      "residential areas",
+      "county",
+      "males:number",
+      "Arecibo"
+    ],
+    [
+      "residential areas:population",
+      "residential areas:alias",
+      "ethnicity"
+    ],
+    [
+      "residential areas:alias",
+      "residential areas:time zone",
+      "time zone:Eastern"
+    ],
+    [
+      "residential areas",
+      "gender ratio",
+      "Arecibo county"
+    ],
+    [
+      "counties",
+      "state",
+      "Alabama"
+    ],
+    [
+      "males",
+      "New Haven County",
+      "residential areas"
+    ],
+    [
+      "cities:area code",
+      "cities:daylight savings"
+    ],
+    [
+      "cities:alias",
+      "cities:elevation"
+    ],
+    [
+      "cities:area code",
+      "cities:P.O. box only",
+      "cities:Post Office",
+      "cities:number"
+    ],
+    [
+      "daylight savings areas",
+      "Midwest region",
+      "postal points",
+      "state"
+    ],
+    [
+      "population",
+      "county",
+      "year",
+      "Wilcox"
+    ],
+    [
+      "population:race",
+      "cities:area code",
+      "average"
+    ],
+    [
+      "postal points",
+      "post office types",
+      "state"
+    ],
+    [
+      "ratings:star",
+      "brand:name",
+      "product:type"
+    ],
+    [
+      "canned beverage",
+      "brand",
+      "year"
+    ],
+    [
+      "bottles:sold",
+      "beverage:type",
+      "state",
+      "amount:difference"
+    ],
+    [
+      "page:number",
+      "word:pair",
+      "word:appearance count"
+    ],
+    [
+      "words:repeated times",
+      "total pages"
+    ],
+    [
+      "word:ID",
+      "word:appearances",
+      "wikipedia page:title",
+      "wikipedia page:name"
+    ],
+    [
+      "biword pairs:first word",
+      "biword pairs:occurrence"
+    ],
+    [
+      "books:language"
+    ],
+    [
+      "books:total price",
+      "orders:customer",
+      "customer:name"
+    ],
+    [
+      "books:ordered",
+      "customer:name",
+      "books:price",
+      "percentage"
+    ],
+    [
+      "orders:count",
+      "customer:name"
+    ],
+    [
+      "Ukrainian:addresses",
+      "database"
+    ],
+    [
+      "shipping orders:type",
+      "date",
+      "percentage"
+    ],
+    [
+      "books:author",
+      "books:number of pages"
+    ],
+    [
+      "orders:customer",
+      "orders:shipping method",
+      "shipping method:type"
+    ],
+    [
+      "orders:count",
+      "customer:name",
+      "customer:surname"
+    ],
+    [
+      "books:author",
+      "books:count"
+    ],
+    [
+      "books:author",
+      "books:page count"
+    ],
+    [
+      "books:language",
+      "books:publication count"
+    ],
+    [
+      "customers:country",
+      "customers:count"
+    ],
+    [
+      "addresses:country",
+      "Philippines"
+    ],
+    [
+      "customer:address",
+      "customer:status"
+    ],
+    [
+      "orders:customer",
+      "orders:year",
+      "orders:shipping method"
+    ],
+    [
+      "books:language",
+      "books:publication"
+    ],
+    [
+      "books:author",
+      "books:number of pages"
+    ],
+    [
+      "orders:placed",
+      "customer:name",
+      "shipping method"
+    ],
+    [
+      "orders:updated",
+      "year",
+      "orders:returned",
+      "percentage"
+    ],
+    [
+      "addresses:customer",
+      "addresses:status",
+      "percentage"
+    ],
+    [
+      "books:pages",
+      "author:name"
+    ],
+    [
+      "books:author",
+      "books:count"
+    ],
+    [
+      "books:ordered",
+      "customer:name"
+    ],
+    [
+      "books:cost",
+      "books:order",
+      "customer:name"
+    ],
+    [
+      "books:number of pages",
+      "orders:customer",
+      "customer:name"
+    ],
+    [
+      "books:purchased price",
+      "books:page count",
+      "books:count"
+    ],
+    [
+      "inspections",
+      "restaurant:name"
+    ],
+    [
+      "inspections:count",
+      "personnel:category"
+    ],
+    [
+      "employees:salary",
+      "employees:inspection",
+      "ID range"
+    ],
+    [
+      "Bitcoin:price",
+      "year"
+    ],
+    [
+      "Bitcoin:price",
+      "year",
+      "year:2013"
+    ],
+    [
+      "orders:handled by",
+      "employee:name"
+    ],
+    [
+      "orders:count",
+      "customers:location"
+    ],
+    [
+      "orders:handled by",
+      "orders:ID",
+      "person:name"
+    ],
+    [
+      "customers:location",
+      "country"
+    ],
+    [
+      "countries:region",
+      "comment:description"
+    ],
+    [
+      "customers:location",
+      "country"
+    ],
+    [
+      "orders:total number",
+      "customers:location"
+    ],
+    [
+      "customers:country",
+      "customers:market segment",
+      "customers:count"
+    ],
+    [
+      "suppliers:country",
+      "suppliers:total number"
+    ],
+    [
+      "suppliers:location",
+      "suppliers:count"
+    ],
+    [
+      "suppliers:country",
+      "suppliers:comment"
+    ],
+    [
+      "customers:segment",
+      "customers:country",
+      "furniture",
+      "Iraq"
+    ],
+    [
+      "part:name",
+      "supply cost"
+    ],
+    [
+      "suppliers:quantity",
+      "part:name"
+    ],
+    [
+      "suppliers:part",
+      "suppliers:location"
+    ],
+    [
+      "parts:type",
+      "parts:available quantity",
+      "suppliers"
+    ],
+    [
+      "part:name",
+      "orders:count"
+    ],
+    [
+      "suppliers:parts",
+      "order:number",
+      "suppliers:debt status"
+    ],
+    [
+      "part:name",
+      "part:supply cost",
+      "highest supply cost",
+      "lowest supply cost",
+      "percentage"
+    ],
+    [
+      "workers:start year",
+      "workers:department"
+    ],
+    [
+      "employees:total number",
+      "department:name"
+    ],
+    [
+      "people:work",
+      "department:finance"
+    ],
+    [
+      "works:data",
+      "language",
+      "difference"
+    ],
+    [
+      "bikes:sub categories"
+    ],
+    [
+      "employees:department",
+      "employees:shift"
+    ],
+    [
+      "product:description",
+      "language:Arabic",
+      "language:Thai",
+      "percentage:difference"
+    ],
+    [
+      "object samples",
+      "image:number",
+      "relation"
+    ],
+    [
+      "images",
+      "object samples",
+      "relation"
+    ],
+    [
+      "objects:color",
+      "image:number"
+    ],
+    [
+      "images:black classes",
+      "images:count"
+    ],
+    [
+      "prediction classes:caption",
+      "image:id"
+    ],
+    [
+      "objects:relations",
+      "images:caption",
+      "prediction class ids",
+      "prediction class ids:value"
+    ],
+    [
+      "images",
+      "objects:attributes",
+      "objects:polka dot"
+    ],
+    [
+      "objects:relations",
+      "images:prediction class"
+    ],
+    [
+      "images:attribute class"
+    ],
+    [
+      "image:id",
+      "predicate class",
+      "count"
+    ],
+    [
+      "image:id",
+      "attribute class",
+      "attribute color"
+    ],
+    [
+      "universities:count",
+      "location:United States of America"
+    ],
+    [
+      "universities:score",
+      "awards:year"
+    ],
+    [
+      "university:name",
+      "university:score",
+      "university:Quality of Education Rank"
+    ],
+    [
+      "university:score",
+      "university:location",
+      "country"
+    ],
+    [
+      "Argentina:location",
+      "universities:count"
+    ],
+    [
+      "ranking system",
+      "criteria",
+      "Center for World University Rankings"
+    ],
+    [
+      "universities:location",
+      "universities:student count",
+      "year"
+    ],
+    [
+      "universities:country",
+      "database"
+    ],
+    [
+      "students:count",
+      "university:name",
+      "year"
+    ],
+    [
+      "criteria:average",
+      "ranking:Times Higher Education World University Ranking",
+      "ranking:Shanghai Ranking",
+      "ranking:Center for World University Rankings"
+    ],
+    [
+      "ranking criteria",
+      "ranking system",
+      "ranking system:name"
+    ],
+    [
+      "universities:location",
+      "country"
+    ],
+    [
+      "universities:teaching criteria",
+      "universities:score"
+    ],
+    [
+      "days:max temperature",
+      "sales:item",
+      "store:number"
+    ],
+    [
+      "stations:sell",
+      "item:id",
+      "date"
+    ],
+    [
+      "store:id",
+      "temperature:minimum",
+      "date"
+    ],
+    [
+      "item:id",
+      "store:id",
+      "units:sold",
+      "weather:snow"
+    ],
+    [
+      "items:sold",
+      "store:id",
+      "weather:condition"
+    ],
+    [
+      "organizations:established",
+      "countries:language",
+      "language:name"
+    ],
+    [
+      "countries:inflation",
+      "countries:infant mortality rate",
+      "rate:per thousand"
+    ],
+    [
+      "countries:GDP",
+      "countries:population growth rate"
+    ],
+    [
+      "mountains:count",
+      "country:population"
+    ],
+    [
+      "establishments:tax code",
+      "establishments:complaint inspections"
+    ],
+    [
+      "employees:office location",
+      "employees:job performance",
+      "city"
+    ],
+    [
+      "employees:gender",
+      "employees:address"
+    ],
+    [
+      "employees:job title",
+      "employees:count"
+    ],
+    [
+      "employees:role",
+      "employees:location"
+    ],
+    [
+      "employees:count",
+      "office:location",
+      "office:name"
+    ],
+    [
+      "account representatives:location",
+      "account representatives:performance",
+      "city"
+    ],
+    [
+      "male",
+      "Regional Managers"
+    ],
+    [
+      "Account Representatives:location",
+      "Account Representatives:performance",
+      "state"
+    ],
+    [
+      "films:language"
+    ],
+    [
+      "actors:starred",
+      "film:title",
+      "film:name"
+    ],
+    [
+      "films:starring",
+      "films:language",
+      "person:name"
+    ],
+    [
+      "films:category",
+      "films:count"
+    ],
+    [
+      "films:category",
+      "films:replacement cost"
+    ],
+    [
+      "films:actor",
+      "actor:name"
+    ],
+    [
+      "films:language"
+    ],
+    [
+      "documentary films:number"
+    ],
+    [
+      "films:category",
+      "films:genre"
+    ],
+    [
+      "films:rental duration",
+      "films:genre"
+    ],
+    [
+      "cities",
+      "country"
+    ],
+    [
+      "classic movies",
+      "movies:rental rate"
+    ],
+    [
+      "films:category",
+      "films:rating"
+    ],
+    [
+      "films:rental rate",
+      "films:total number",
+      "films:starred by",
+      "actor:name"
+    ],
+    [
+      "rental rate",
+      "film:title",
+      "film:genre"
+    ],
+    [
+      "rental rate",
+      "film titles:genre"
+    ],
+    [
+      "action movies:availability",
+      "action movies:rent"
+    ],
+    [
+      "movies:star",
+      "actor:name"
+    ],
+    [
+      "film:average rate",
+      "film:starred by",
+      "person:name"
+    ],
+    [
+      "films:rental rate",
+      "films:star"
+    ]
+  ]

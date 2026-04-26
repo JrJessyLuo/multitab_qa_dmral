@@ -1,6 +1,6 @@
 # DMRAL
 
-This repository contains the code and benchmarks for the **DMRAL** framework, designed for numerical multi-table question answering (MTQA) using tables in the wild.
+This repository contains the code and benchmarks for the paper **Decomposition-Driven Multi-Table Retrieval and Reasoning for Numerical Question Answering**.
 
 ---
 
@@ -8,10 +8,11 @@ This repository contains the code and benchmarks for the **DMRAL** framework, de
 
 We release two benchmarks to support evaluation:
 
-- [**SpiderWide**](https://zenodo.org/records/15486949)  
-- [**BirdWide**](https://zenodo.org/records/15488031)
+- [**SpiderWild**](https://drive.google.com/drive/u/0/folders/1jtQQEOuRN7jz3LJ9f4QJlzrSXnGeiF41)  
+- [**BirdWild**](https://drive.google.com/drive/u/0/folders/1FM2rXHoqVXXDhCCE0IadrRrzbxcnz8sL)
 
-Each benchmark adapts an existing text-to-SQL dataset into a more realistic setting for multi-table analytical reasoning using tables in the wild.
+Each benchmark adapts an existing text-to-SQL dataset into a more realistic setting for multi-table question answering over large-scale table collections.
+
 
 ### Setup
 
@@ -20,6 +21,12 @@ Each benchmark adapts an existing text-to-SQL dataset into a more realistic sett
 
 - **Questions and Labels:**  
 The associated questions, relevant tables, and answers are located in the `dataset/label` directory. 
+
+- **Trained models:** 
+  Download [**Coverage Scoring Function Models**](https://drive.google.com/drive/u/0/folders/1YtP7GuXNfrIkJCsCqOjpxN54dFo2D17-) and put them under code/checkpoint
+
+- **LLM config:**
+  Modify "api_key" in model_config.py located in the `code/utils` directory.
 ---
 
 ## 🚀 Running the DMRAL Framework
@@ -35,9 +42,12 @@ pip install -r requirements.txt
 ```
 
 ### 2. Running the Full Pipeline
-> **Note**: To run the code on the **BirdDL** dataset, make sure to update the `dataset_name` variable in `bash.sh` to `birddl`.
+> **Note**: Before running the `bash.sh`, make sure to update the `dataset_name` variable by speficifying the dataset name (e.g., "spiderwild").
 
 ```bash
 cd code
 bash bash.sh
 ```
+
+## Contact
+If you have any issue, please contact feng.luo@student.rmit.edu.au.

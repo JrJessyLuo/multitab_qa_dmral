@@ -1,0 +1,2194 @@
+[
+    {
+      "question_id": 0,
+      "db_id": "concert_singer",
+      "question": "Find the number of concerts happened in the stadium with the highest capacity .",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "select count(*) from concert where stadium_id = (select stadium_id from stadium order by capacity desc limit 1)"
+    },
+    {
+      "question_id": 1,
+      "db_id": "concert_singer",
+      "question": "What are the number of concerts that occurred in the stadium with the largest capacity ?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "select count(*) from concert where stadium_id = (select stadium_id from stadium order by capacity desc limit 1)"
+    },
+    {
+      "question_id": 2,
+      "db_id": "pets_1",
+      "question": "Find number of pets owned by students who are older than 20.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid WHERE T1.age  >  20"
+    },
+    {
+      "question_id": 3,
+      "db_id": "pets_1",
+      "question": "How many pets are owned by students that have an age greater than 20?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid WHERE T1.age  >  20"
+    },
+    {
+      "question_id": 4,
+      "db_id": "pets_1",
+      "question": "Find the number of dog pets that are raised by female students (with sex F).",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T2.petid  =  T3.petid WHERE T1.sex  =  'F' AND T3.pettype  =  'dog'"
+    },
+    {
+      "question_id": 5,
+      "db_id": "pets_1",
+      "question": "How many dog pets are raised by female students?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T2.petid  =  T3.petid WHERE T1.sex  =  'F' AND T3.pettype  =  'dog'"
+    },
+    {
+      "question_id": 6,
+      "db_id": "car_1",
+      "question": "How many car makers are there in france?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM CAR_MAKERS AS T1 JOIN COUNTRIES AS T2 ON T1.Country  =  T2.CountryId WHERE T2.CountryName  =  'france';"
+    },
+    {
+      "question_id": 7,
+      "db_id": "car_1",
+      "question": "What is the number of makers of care in France?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM CAR_MAKERS AS T1 JOIN COUNTRIES AS T2 ON T1.Country  =  T2.CountryId WHERE T2.CountryName  =  'france';"
+    },
+    {
+      "question_id": 9,
+      "db_id": "car_1",
+      "question": "What is the count of the car models produced in the United States?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM MODEL_LIST AS T1 JOIN CAR_MAKERS AS T2 ON T1.Maker  =  T2.Id JOIN COUNTRIES AS T3 ON T2.Country  =  T3.CountryId WHERE T3.CountryName  =  'usa';"
+    },
+    {
+      "question_id": 13,
+      "db_id": "flight_2",
+      "question": "How many flights depart from City Aberdeen?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM FLIGHTS AS T1 JOIN AIRPORTS AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.City  =  \"Aberdeen\""
+    },
+    {
+      "question_id": 14,
+      "db_id": "flight_2",
+      "question": "Return the number of flights departing from Aberdeen.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM FLIGHTS AS T1 JOIN AIRPORTS AS T2 ON T1.SourceAirport  =  T2.AirportCode WHERE T2.City  =  \"Aberdeen\""
+    },
+    {
+      "question_id": 15,
+      "db_id": "flight_2",
+      "question": "How many flights arriving in Aberdeen city?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM FLIGHTS AS T1 JOIN AIRPORTS AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T2.City  =  \"Aberdeen\""
+    },
+    {
+      "question_id": 16,
+      "db_id": "flight_2",
+      "question": "Return the number of flights arriving in Aberdeen.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM FLIGHTS AS T1 JOIN AIRPORTS AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T2.City  =  \"Aberdeen\""
+    },
+    {
+      "question_id": 17,
+      "db_id": "flight_2",
+      "question": "How many flights depart from City 'Aberdeen' and have destination City 'Ashley'?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM FLIGHTS AS T1 JOIN AIRPORTS AS T2 ON T1.DestAirport  =  T2.AirportCode JOIN AIRPORTS AS T3 ON T1.SourceAirport  =  T3.AirportCode WHERE T2.City  =  \"Ashley\" AND T3.City  =  \"Aberdeen\""
+    },
+    {
+      "question_id": 18,
+      "db_id": "flight_2",
+      "question": "How many flights fly from Aberdeen to Ashley?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM FLIGHTS AS T1 JOIN AIRPORTS AS T2 ON T1.DestAirport  =  T2.AirportCode JOIN AIRPORTS AS T3 ON T1.SourceAirport  =  T3.AirportCode WHERE T2.City  =  \"Ashley\" AND T3.City  =  \"Aberdeen\""
+    },
+    {
+      "question_id": 23,
+      "db_id": "flight_2",
+      "question": "How many United Airlines flights go to City 'Aberdeen'?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM FLIGHTS AS T1 JOIN AIRPORTS AS T2 ON T1.DestAirport  =  T2.AirportCode JOIN AIRLINES AS T3 ON T3.uid  =  T1.Airline WHERE T2.City  =  \"Aberdeen\" AND T3.Airline  =  \"United Airlines\""
+    },
+    {
+      "question_id": 24,
+      "db_id": "flight_2",
+      "question": "Find the number of flights landing in the city of Aberdeen or Abilene.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Flights AS T1 JOIN Airports AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T2.city  =  \"Aberdeen\" OR T2.city  =  \"Abilene\""
+    },
+    {
+      "question_id": 25,
+      "db_id": "flight_2",
+      "question": "How many flights land in Aberdeen or Abilene?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Flights AS T1 JOIN Airports AS T2 ON T1.DestAirport  =  T2.AirportCode WHERE T2.city  =  \"Aberdeen\" OR T2.city  =  \"Abilene\""
+    },
+    {
+      "question_id": 26,
+      "db_id": "cre_Doc_Template_Mgt",
+      "question": "How many documents are using the template with type code 'PPT'?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Documents AS T1 JOIN Templates AS T2 ON T1.Template_ID  =  T2.Template_ID WHERE T2.Template_Type_Code  =  'PPT'"
+    },
+    {
+      "question_id": 27,
+      "db_id": "cre_Doc_Template_Mgt",
+      "question": "Count the number of documents that use the PPT template type.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Documents AS T1 JOIN Templates AS T2 ON T1.Template_ID  =  T2.Template_ID WHERE T2.Template_Type_Code  =  'PPT'"
+    },
+    {
+      "question_id": 28,
+      "db_id": "cre_Doc_Template_Mgt",
+      "question": "How many paragraphs for the document with name 'Summer Show'?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Paragraphs AS T1 JOIN Documents AS T2 ON T1.document_ID  =  T2.document_ID WHERE T2.document_name  =  'Summer Show'"
+    },
+    {
+      "question_id": 29,
+      "db_id": "cre_Doc_Template_Mgt",
+      "question": "Count the number of paragraphs in the document named 'Summer Show'.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Paragraphs AS T1 JOIN Documents AS T2 ON T1.document_ID  =  T2.document_ID WHERE T2.document_name  =  'Summer Show'"
+    },
+    {
+      "question_id": 30,
+      "db_id": "museum_visit",
+      "question": "What is the total ticket expense of the visitors whose membership level is 1?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(t2.Total_spent) FROM visitor AS t1 JOIN visit AS t2 ON t1.id  =  t2.visitor_id WHERE t1.Level_of_membership  =  1"
+    },
+    {
+      "question_id": 31,
+      "db_id": "museum_visit",
+      "question": "Find the number of visitors who did not visit any museum opened after 2010.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM visitor WHERE id NOT IN (SELECT t2.visitor_id FROM museum AS t1 JOIN visit AS t2 ON t1.Museum_ID  =  t2.Museum_ID WHERE t1.open_year  >  2010)"
+    },
+    {
+      "question_id": 32,
+      "db_id": "battle_death",
+      "question": "How many battles did not lose any ship with tonnage '225'?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM battle WHERE id NOT IN ( SELECT lost_in_battle FROM ship WHERE tonnage  =  '225' );"
+    },
+    {
+      "question_id": 33,
+      "db_id": "student_transcripts_tracking",
+      "question": "How many degrees does the engineering department offer?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Departments AS T1 JOIN Degree_Programs AS T2 ON T1.department_id  =  T2.department_id WHERE T1.department_name  =  'engineer'"
+    },
+    {
+      "question_id": 34,
+      "db_id": "student_transcripts_tracking",
+      "question": "How many degrees does the engineering department have?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Departments AS T1 JOIN Degree_Programs AS T2 ON T1.department_id  =  T2.department_id WHERE T1.department_name  =  'engineer'"
+    },
+    {
+      "question_id": 35,
+      "db_id": "poker_player",
+      "question": "What is the average earnings of poker players with height higher than 200?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.Earnings) FROM people AS T1 JOIN poker_player AS T2 ON T1.People_ID  =  T2.People_ID WHERE T1.Height  >  200"
+    },
+    {
+      "question_id": 36,
+      "db_id": "poker_player",
+      "question": "Give average earnings of poker players who are taller than 200.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.Earnings) FROM people AS T1 JOIN poker_player AS T2 ON T1.People_ID  =  T2.People_ID WHERE T1.Height  >  200"
+    },
+    {
+      "question_id": 37,
+      "db_id": "voter_1",
+      "question": "How many contestants did not get voted?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM contestants WHERE contestant_number NOT IN ( SELECT contestant_number FROM votes )"
+    },
+    {
+      "question_id": 38,
+      "db_id": "world_1",
+      "question": "What is the total number of languages used in Aruba?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT COUNT(T2.Language) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T1.Name  =  \"Aruba\""
+    },
+    {
+      "question_id": 39,
+      "db_id": "world_1",
+      "question": "How many languages are spoken in Aruba?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT COUNT(T2.Language) FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T1.Name  =  \"Aruba\""
+    },
+    {
+      "question_id": 41,
+      "db_id": "world_1",
+      "question": "How many countries speak both English and Dutch?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT COUNT(*) FROM (SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"English\" INTERSECT SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"Dutch\")"
+    },
+    {
+      "question_id": 42,
+      "db_id": "world_1",
+      "question": "What is the number of nations that use English and Dutch?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT COUNT(*) FROM (SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"English\" INTERSECT SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"Dutch\")"
+    },
+    {
+      "question_id": 48,
+      "db_id": "network_1",
+      "question": "Count the number of friends Kyle has.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Friend AS T1 JOIN Highschooler AS T2 ON T1.student_id  =  T2.id WHERE T2.name  =  \"Kyle\""
+    },
+    {
+      "question_id": 49,
+      "db_id": "network_1",
+      "question": "How many likes does Kyle have?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Likes AS T1 JOIN Highschooler AS T2 ON T1.student_id  =  T2.id WHERE T2.name  =  \"Kyle\""
+    },
+    {
+      "question_id": 50,
+      "db_id": "network_1",
+      "question": "Return the number of likes that the high schooler named Kyle has.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Likes AS T1 JOIN Highschooler AS T2 ON T1.student_id  =  T2.id WHERE T2.name  =  \"Kyle\""
+    },
+    {
+      "question_id": 51,
+      "db_id": "dog_kennels",
+      "question": "How many dogs have not gone through any treatment?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Dogs WHERE dog_id NOT IN ( SELECT dog_id FROM Treatments )"
+    },
+    {
+      "question_id": 52,
+      "db_id": "dog_kennels",
+      "question": "Tell me the number of dogs that have not received any treatment .",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "select count(*) from dogs where dog_id not in ( select dog_id from treatments )"
+    },
+    {
+      "question_id": 53,
+      "db_id": "dog_kennels",
+      "question": "How many owners temporarily do not have any dogs?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Owners WHERE owner_id NOT IN ( SELECT owner_id FROM Dogs )"
+    },
+    {
+      "question_id": 54,
+      "db_id": "dog_kennels",
+      "question": "Find the number of owners who do not own any dogs at this moment.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Owners WHERE owner_id NOT IN ( SELECT owner_id FROM Dogs )"
+    },
+    {
+      "question_id": 55,
+      "db_id": "dog_kennels",
+      "question": "How many professionals did not operate any treatment on dogs?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Professionals WHERE professional_id NOT IN ( SELECT professional_id FROM Treatments )"
+    },
+    {
+      "question_id": 56,
+      "db_id": "dog_kennels",
+      "question": "Find the number of professionals who have not treated any dogs.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Professionals WHERE professional_id NOT IN ( SELECT professional_id FROM Treatments )"
+    },
+    {
+      "question_id": 57,
+      "db_id": "department_management",
+      "question": "How many departments are led by heads who are not mentioned?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM department WHERE department_id NOT IN (SELECT department_id FROM management);"
+    },
+    {
+      "question_id": 58,
+      "db_id": "student_assessment",
+      "question": "How many students attend course English?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM courses AS T1 JOIN student_course_attendance AS T2 ON T1.course_id = T2.course_id WHERE T1.course_name = \"English\""
+    },
+    {
+      "question_id": 59,
+      "db_id": "student_assessment",
+      "question": "How many students are attending English courses?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM courses AS T1 JOIN student_course_attendance AS T2 ON T1.course_id = T2.course_id WHERE T1.course_name = \"English\""
+    },
+    {
+      "question_id": 60,
+      "db_id": "student_assessment",
+      "question": "How many courses do the student whose id is 171 attend?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM courses AS T1 JOIN student_course_attendance AS T2 ON T1.course_id = T2.course_id WHERE T2.student_id = 171"
+    },
+    {
+      "question_id": 61,
+      "db_id": "student_assessment",
+      "question": "How many courses does the student with id 171 actually attend?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM courses AS T1 JOIN student_course_attendance AS T2 ON T1.course_id = T2.course_id WHERE T2.student_id = 171"
+    },
+    {
+      "question_id": 62,
+      "db_id": "bike_1",
+      "question": "What is the average longitude of stations that never had bike availability more than 10?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(long) FROM station WHERE id NOT IN (SELECT station_id FROM status GROUP BY station_id HAVING max(bikes_available)  >  10)"
+    },
+    {
+      "question_id": 63,
+      "db_id": "bike_1",
+      "question": "What is the mean longitude for all stations that have never had more than 10 bikes available?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(long) FROM station WHERE id NOT IN (SELECT station_id FROM status GROUP BY station_id HAVING max(bikes_available)  >  10)"
+    },
+    {
+      "question_id": 68,
+      "db_id": "twitter_1",
+      "question": "Find the average number of followers for the users who do not have any tweet.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(followers) FROM user_profiles WHERE UID NOT IN (SELECT UID FROM tweets)"
+    },
+    {
+      "question_id": 69,
+      "db_id": "twitter_1",
+      "question": "Find the average number of followers for the users who had some tweets.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(followers) FROM user_profiles WHERE UID IN (SELECT UID FROM tweets)"
+    },
+    {
+      "question_id": 86,
+      "db_id": "journal_committee",
+      "question": "What is the average sales of the journals that have an editor whose work type is 'Photo'?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T1.sales) FROM journal AS T1 JOIN journal_committee AS T2 ON T1.journal_ID  =  T2.journal_ID WHERE T2.work_type  =  'Photo'"
+    },
+    {
+      "question_id": 87,
+      "db_id": "customers_card_transactions",
+      "question": "How many accounts does the customer with first name Art and last name Turcotte have?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Accounts AS T1 JOIN Customers AS T2 ON T1.customer_id  =  T2.customer_id WHERE T2.customer_first_name  =  \"Art\" AND T2.customer_last_name  =  \"Turcotte\""
+    },
+    {
+      "question_id": 88,
+      "db_id": "customers_card_transactions",
+      "question": "Return the number of accounts that the customer with the first name Art and last name Turcotte has.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Accounts AS T1 JOIN Customers AS T2 ON T1.customer_id  =  T2.customer_id WHERE T2.customer_first_name  =  \"Art\" AND T2.customer_last_name  =  \"Turcotte\""
+    },
+    {
+      "question_id": 89,
+      "db_id": "customers_card_transactions",
+      "question": "Show the number of all customers without an account.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Customers WHERE customer_id NOT IN (SELECT customer_id FROM Accounts)"
+    },
+    {
+      "question_id": 90,
+      "db_id": "customers_card_transactions",
+      "question": "How many customers do not have an account?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Customers WHERE customer_id NOT IN (SELECT customer_id FROM Accounts)"
+    },
+    {
+      "question_id": 91,
+      "db_id": "customers_card_transactions",
+      "question": "How many cards does customer Art Turcotte have?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Customers_cards AS T1 JOIN Customers AS T2 ON T1.customer_id  =  T2.customer_id WHERE T2.customer_first_name  =  \"Art\" AND T2.customer_last_name  =  \"Turcotte\""
+    },
+    {
+      "question_id": 92,
+      "db_id": "customers_card_transactions",
+      "question": "Count the number of cards the customer with the first name Art and last name Turcotte has.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Customers_cards AS T1 JOIN Customers AS T2 ON T1.customer_id  =  T2.customer_id WHERE T2.customer_first_name  =  \"Art\" AND T2.customer_last_name  =  \"Turcotte\""
+    },
+    {
+      "question_id": 93,
+      "db_id": "customers_card_transactions",
+      "question": "How many credit cards does customer Blanche Huels have?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Customers_cards AS T1 JOIN Customers AS T2 ON T1.customer_id  =  T2.customer_id WHERE T2.customer_first_name  =  \"Blanche\" AND T2.customer_last_name  =  \"Huels\" AND T1.card_type_code  =  \"Credit\""
+    },
+    {
+      "question_id": 94,
+      "db_id": "customers_card_transactions",
+      "question": "Count the number of credit cards that the customer with first name Blanche and last name Huels has.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Customers_cards AS T1 JOIN Customers AS T2 ON T1.customer_id  =  T2.customer_id WHERE T2.customer_first_name  =  \"Blanche\" AND T2.customer_last_name  =  \"Huels\" AND T1.card_type_code  =  \"Credit\""
+    },
+    {
+      "question_id": 109,
+      "db_id": "insurance_fnol",
+      "question": "How many policies are listed for the customer named \"Dayana Robel\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM customers AS t1 JOIN customers_policies AS t2 ON t1.customer_id  =  t2.customer_id WHERE t1.customer_name  =  \"Dayana Robel\""
+    },
+    {
+      "question_id": 110,
+      "db_id": "insurance_fnol",
+      "question": "Count the total number of policies used by the customer named \"Dayana Robel\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM customers AS t1 JOIN customers_policies AS t2 ON t1.customer_id  =  t2.customer_id WHERE t1.customer_name  =  \"Dayana Robel\""
+    },
+    {
+      "question_id": 113,
+      "db_id": "university_basketball",
+      "question": "How many schools do not participate in the basketball match?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM university WHERE school_id NOT IN (SELECT school_id FROM basketball_match)"
+    },
+    {
+      "question_id": 114,
+      "db_id": "university_basketball",
+      "question": "Count the number of universities that do not participate in the baketball match.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM university WHERE school_id NOT IN (SELECT school_id FROM basketball_match)"
+    },
+    {
+      "question_id": 118,
+      "db_id": "match_season",
+      "question": "How many distinct colleges are associated with players from the team with name \"Columbus Crew\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT T1.College) FROM match_season AS T1 JOIN team AS T2 ON T1.Team  =  T2.Team_id WHERE T2.Name  =  \"Columbus Crew\""
+    },
+    {
+      "question_id": 119,
+      "db_id": "match_season",
+      "question": "Count the number of different colleges that players who play for Columbus Crew are from.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT T1.College) FROM match_season AS T1 JOIN team AS T2 ON T1.Team  =  T2.Team_id WHERE T2.Name  =  \"Columbus Crew\""
+    },
+    {
+      "question_id": 120,
+      "db_id": "body_builder",
+      "question": "What is the average total score of body builders with height bigger than 200?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T1.Total) FROM body_builder AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID WHERE T2.Height  >  200"
+    },
+    {
+      "question_id": 121,
+      "db_id": "election_representative",
+      "question": "What is the average number of votes of representatives from party \"Republican\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T1.Votes) FROM election AS T1 JOIN representative AS T2 ON T1.Representative_ID  =  T2.Representative_ID WHERE T2.Party  =  \"Republican\""
+    },
+    {
+      "question_id": 122,
+      "db_id": "apartment_rentals",
+      "question": "Show the average room count of the apartments that have booking status code \"Provisional\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(room_count) FROM Apartment_Bookings AS T1 JOIN Apartments AS T2 ON T1.apt_id  =  T2.apt_id WHERE T1.booking_status_code  =  \"Provisional\""
+    },
+    {
+      "question_id": 123,
+      "db_id": "apartment_rentals",
+      "question": "What is the average room count of the apartments whose booking status code is \"Provisional\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(room_count) FROM Apartment_Bookings AS T1 JOIN Apartments AS T2 ON T1.apt_id  =  T2.apt_id WHERE T1.booking_status_code  =  \"Provisional\""
+    },
+    {
+      "question_id": 124,
+      "db_id": "apartment_rentals",
+      "question": "Show the total number of rooms of all apartments with facility code \"Gym\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T2.room_count) FROM Apartment_Facilities AS T1 JOIN Apartments AS T2 ON T1.apt_id  =  T2.apt_id WHERE T1.facility_code  =  \"Gym\""
+    },
+    {
+      "question_id": 125,
+      "db_id": "apartment_rentals",
+      "question": "Find the total number of rooms in the apartments that have facility code \"Gym\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T2.room_count) FROM Apartment_Facilities AS T1 JOIN Apartments AS T2 ON T1.apt_id  =  T2.apt_id WHERE T1.facility_code  =  \"Gym\""
+    },
+    {
+      "question_id": 126,
+      "db_id": "apartment_rentals",
+      "question": "Show the total number of rooms of the apartments in the building with short name \"Columbus Square\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T2.room_count) FROM Apartment_Buildings AS T1 JOIN Apartments AS T2 ON T1.building_id  =  T2.building_id WHERE T1.building_short_name  =  \"Columbus Square\""
+    },
+    {
+      "question_id": 127,
+      "db_id": "apartment_rentals",
+      "question": "How many rooms in total are there in the apartments in the building with short name \"Columbus Square\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T2.room_count) FROM Apartment_Buildings AS T1 JOIN Apartments AS T2 ON T1.building_id  =  T2.building_id WHERE T1.building_short_name  =  \"Columbus Square\""
+    },
+    {
+      "question_id": 128,
+      "db_id": "apartment_rentals",
+      "question": "How many apartments do not have any facility?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Apartments WHERE apt_id NOT IN (SELECT apt_id FROM Apartment_Facilities)"
+    },
+    {
+      "question_id": 129,
+      "db_id": "apartment_rentals",
+      "question": "Find the number of apartments that have no facility.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Apartments WHERE apt_id NOT IN (SELECT apt_id FROM Apartment_Facilities)"
+    },
+    {
+      "question_id": 130,
+      "db_id": "game_injury",
+      "question": "How many games are free of injury accidents?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM game WHERE id NOT IN ( SELECT game_id FROM injury_accident )"
+    },
+    {
+      "question_id": 131,
+      "db_id": "game_injury",
+      "question": "How many distinct kinds of injuries happened after season 2010?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT T1.injury) FROM injury_accident AS T1 JOIN game AS T2 ON T1.game_id  =  T2.id WHERE T2.season  >  2010"
+    },
+    {
+      "question_id": 132,
+      "db_id": "soccer_1",
+      "question": "How many leagues are there in England?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Country AS T1 JOIN League AS T2 ON T1.id  =  T2.country_id WHERE T1.name  =  \"England\""
+    },
+    {
+      "question_id": 133,
+      "db_id": "customers_and_invoices",
+      "question": "How many customers don't have an account?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Customers WHERE customer_id NOT IN (SELECT customer_id FROM Accounts)"
+    },
+    {
+      "question_id": 134,
+      "db_id": "customers_and_invoices",
+      "question": "Count the number of customers who do not have an account.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Customers WHERE customer_id NOT IN (SELECT customer_id FROM Accounts)"
+    },
+    {
+      "question_id": 135,
+      "db_id": "customers_and_invoices",
+      "question": "How many products were not included in any order?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products WHERE product_id NOT IN ( SELECT product_id FROM Order_items )"
+    },
+    {
+      "question_id": 136,
+      "db_id": "customers_and_invoices",
+      "question": "Count the number of products that were never ordered.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products WHERE product_id NOT IN ( SELECT product_id FROM Order_items )"
+    },
+    {
+      "question_id": 137,
+      "db_id": "theme_gallery",
+      "question": "How many exhibitions have a attendance more than 100 or have a ticket price below 10?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM exhibition_record AS T1 JOIN exhibition AS T2 ON T1.exhibition_id  =  T2.exhibition_id WHERE T1.attendance  >  100 OR T2.ticket_price  <  10"
+    },
+    {
+      "question_id": 138,
+      "db_id": "theme_gallery",
+      "question": "Count the number of exhibitions that have had an attendnance of over 100 or a ticket prices under 10.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM exhibition_record AS T1 JOIN exhibition AS T2 ON T1.exhibition_id  =  T2.exhibition_id WHERE T1.attendance  >  100 OR T2.ticket_price  <  10"
+    },
+    {
+      "question_id": 139,
+      "db_id": "epinions_1",
+      "question": "Find the number of items that did not receive any review.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM item WHERE i_id NOT IN (SELECT i_id FROM review)"
+    },
+    {
+      "question_id": 140,
+      "db_id": "epinions_1",
+      "question": "Find the number of users who did not write any review.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM useracct WHERE u_id NOT IN (SELECT u_id FROM review)"
+    },
+    {
+      "question_id": 141,
+      "db_id": "epinions_1",
+      "question": "Find the number of items without any review.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM item WHERE i_id NOT IN (SELECT i_id FROM review)"
+    },
+    {
+      "question_id": 142,
+      "db_id": "gymnast",
+      "question": "What is the average age of all gymnasts?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.Age) FROM gymnast AS T1 JOIN people AS T2 ON T1.Gymnast_ID  =  T2.People_ID"
+    },
+    {
+      "question_id": 143,
+      "db_id": "gymnast",
+      "question": "Return the average age across all gymnasts.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.Age) FROM gymnast AS T1 JOIN people AS T2 ON T1.Gymnast_ID  =  T2.People_ID"
+    },
+    {
+      "question_id": 144,
+      "db_id": "small_bank_1",
+      "question": "Find the total savings balance of all accounts except the account with name \u2018Brown\u2019.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T2.balance) FROM accounts AS T1 JOIN savings AS T2 ON T1.custid  =  T2.custid WHERE T1.name != 'Brown'"
+    },
+    {
+      "question_id": 146,
+      "db_id": "browser_web",
+      "question": "How many accelerators are not compatible with the browsers listed ?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM web_client_accelerator WHERE id NOT IN ( SELECT accelerator_id FROM accelerator_compatible_browser );"
+    },
+    {
+      "question_id": 147,
+      "db_id": "school_finance",
+      "question": "How many donors have endowment for school named \"Glenn\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT T1.donator_name) FROM endowment AS T1 JOIN school AS T2 ON T1.school_id  =  T2.school_id WHERE T2.school_name  =  \"Glenn\""
+    },
+    {
+      "question_id": 148,
+      "db_id": "school_finance",
+      "question": "What is the total budget amount for school \"Glenn\" in all years?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T1.budgeted) FROM budget AS T1 JOIN school AS T2 ON T1.school_id  =  T2.school_id WHERE T2.school_name  =  'Glenn'"
+    },
+    {
+      "question_id": 149,
+      "db_id": "protein_institute",
+      "question": "How many proteins are associated with an institution founded after 1880 or an institution with type \"Private\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM institution AS T1 JOIN protein AS T2 ON T1.institution_id  =  T2.institution_id WHERE T1.founded  >  1880 OR T1.type  =  'Private'"
+    },
+    {
+      "question_id": 150,
+      "db_id": "protein_institute",
+      "question": "How many proteins are associated with an institution in a building with at least 20 floors?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM institution AS T1 JOIN protein AS T2 ON T1.institution_id  =  T2.institution_id JOIN building AS T3 ON T3.building_id  =  T1.building_id WHERE T3.floors  >=  20"
+    },
+    {
+      "question_id": 151,
+      "db_id": "protein_institute",
+      "question": "How many institutions do not have an associated protein in our record?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM institution WHERE institution_id NOT IN (SELECT institution_id FROM protein)"
+    },
+    {
+      "question_id": 152,
+      "db_id": "products_for_hire",
+      "question": "How many products are never booked with amount higher than 200?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Products_for_hire WHERE product_id NOT IN ( SELECT product_id FROM products_booked WHERE booked_amount  >  200 )"
+    },
+    {
+      "question_id": 153,
+      "db_id": "party_people",
+      "question": "How many Annual Meeting events happened in the United Kingdom region?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM region AS t1 JOIN party AS t2 ON t1.region_id  =  t2.region_id JOIN party_events AS t3 ON t2.party_id  =  t3.party_id WHERE t1.region_name  =  \"United Kingdom\" AND t3.Event_Name  =  \"Annaual Meeting\""
+    },
+    {
+      "question_id": 154,
+      "db_id": "party_people",
+      "question": "Count the number of Annual Meeting events that took place in the region of the United Kingdom.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM region AS t1 JOIN party AS t2 ON t1.region_id  =  t2.region_id JOIN party_events AS t3 ON t2.party_id  =  t3.party_id WHERE t1.region_name  =  \"United Kingdom\" AND t3.Event_Name  =  \"Annaual Meeting\""
+    },
+    {
+      "question_id": 155,
+      "db_id": "cre_Doc_Control_Systems",
+      "question": "How many documents were shipped by USPS?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Ref_Shipping_Agents JOIN Documents ON Documents.shipping_agent_code = Ref_Shipping_Agents.shipping_agent_code WHERE Ref_Shipping_Agents.shipping_agent_name = \"USPS\";"
+    },
+    {
+      "question_id": 156,
+      "db_id": "local_govt_in_alabama",
+      "question": "How many events had participants whose details had the substring 'Dr.'",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM participants AS T1 JOIN Participants_in_Events AS T2 ON T1.Participant_ID  =  T2.Participant_ID WHERE T1.participant_details LIKE '%Dr.%'"
+    },
+    {
+      "question_id": 157,
+      "db_id": "local_govt_in_alabama",
+      "question": "How many events did not have any participants?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM EVENTS WHERE event_id NOT IN (SELECT event_id FROM Participants_in_Events)"
+    },
+    {
+      "question_id": 158,
+      "db_id": "formula_1",
+      "question": "How many drivers participated in the race Australian Grand Prix held in 2009?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM results AS T1 JOIN races AS T2 ON T1.raceid = T2.raceid WHERE T2.name = \"Australian Grand Prix\" AND YEAR = 2009"
+    },
+    {
+      "question_id": 159,
+      "db_id": "formula_1",
+      "question": "How many drivers were in the Australian Grand Prix held in 2009?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM results AS T1 JOIN races AS T2 ON T1.raceid = T2.raceid WHERE T2.name = \"Australian Grand Prix\" AND YEAR = 2009"
+    },
+    {
+      "question_id": 162,
+      "db_id": "entrepreneur",
+      "question": "What is the total money requested by entrepreneurs with height more than 1.85?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T1.Money_Requested) FROM entrepreneur AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID WHERE T2.Height  >  1.85"
+    },
+    {
+      "question_id": 163,
+      "db_id": "entrepreneur",
+      "question": "Give the total money requested by entrepreneurs who are taller than 1.85.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T1.Money_Requested) FROM entrepreneur AS T1 JOIN people AS T2 ON T1.People_ID  =  T2.People_ID WHERE T2.Height  >  1.85"
+    },
+    {
+      "question_id": 164,
+      "db_id": "perpetrator",
+      "question": "What is the total kills of the perpetrators with height more than 1.84.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T2.Killed) FROM people AS T1 JOIN perpetrator AS T2 ON T1.People_ID  =  T2.People_ID WHERE T1.Height  >  1.84"
+    },
+    {
+      "question_id": 165,
+      "db_id": "county_public_safety",
+      "question": "Show the number of cities in counties that have a population more than 20000.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM city WHERE county_ID IN (SELECT county_ID FROM county_public_safety WHERE population  >  20000)"
+    },
+    {
+      "question_id": 166,
+      "db_id": "county_public_safety",
+      "question": "How many cities are in counties that have populations of over 20000?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM city WHERE county_ID IN (SELECT county_ID FROM county_public_safety WHERE population  >  20000)"
+    },
+    {
+      "question_id": 171,
+      "db_id": "election",
+      "question": "How many distinct delegates are from counties with population larger than 50000?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT T2.Delegate) FROM county AS T1 JOIN election AS T2 ON T1.County_id  =  T2.District WHERE T1.Population  >  50000"
+    },
+    {
+      "question_id": 172,
+      "db_id": "election",
+      "question": "Count the number of distinct delegates who are from counties with population above 50000.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT T2.Delegate) FROM county AS T1 JOIN election AS T2 ON T1.County_id  =  T2.District WHERE T1.Population  >  50000"
+    },
+    {
+      "question_id": 173,
+      "db_id": "restaurant_1",
+      "question": "How many restaurant is the Sandwich type restaurant?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Restaurant JOIN Type_Of_Restaurant ON Restaurant.ResID =  Type_Of_Restaurant.ResID JOIN Restaurant_Type ON Type_Of_Restaurant.ResTypeID = Restaurant_Type.ResTypeID GROUP BY Type_Of_Restaurant.ResTypeID HAVING Restaurant_Type.ResTypeName = 'Sandwich'"
+    },
+    {
+      "question_id": 174,
+      "db_id": "restaurant_1",
+      "question": "How long does student Linda Smith spend on the restaurant in total?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(Spent) FROM Student JOIN Visits_Restaurant ON Student.StuID = Visits_Restaurant.StuID WHERE Student.Fname = \"Linda\" AND Student.Lname = \"Smith\";"
+    },
+    {
+      "question_id": 175,
+      "db_id": "restaurant_1",
+      "question": "How many times has the student Linda Smith visited Subway?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Student JOIN Visits_Restaurant ON Student.StuID = Visits_Restaurant.StuID JOIN Restaurant ON Visits_Restaurant.ResID = Restaurant.ResID WHERE Student.Fname = \"Linda\" AND Student.Lname = \"Smith\" AND Restaurant.ResName = \"Subway\";"
+    },
+    {
+      "question_id": 176,
+      "db_id": "icfp_1",
+      "question": "How many papers have \"Atsushi Ohori\" published?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM authors AS t1 JOIN authorship AS t2 ON t1.authid  =  t2.authid JOIN papers AS t3 ON t2.paperid  =  t3.paperid WHERE  t1.fname  =  \"Atsushi\" AND t1.lname  =  \"Ohori\""
+    },
+    {
+      "question_id": 177,
+      "db_id": "icfp_1",
+      "question": "How many papers are \"Atsushi Ohori\" the author of?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM authors AS t1 JOIN authorship AS t2 ON t1.authid  =  t2.authid JOIN papers AS t3 ON t2.paperid  =  t3.paperid WHERE  t1.fname  =  \"Atsushi\" AND t1.lname  =  \"Ohori\""
+    },
+    {
+      "question_id": 178,
+      "db_id": "icfp_1",
+      "question": "How many papers are published by the institution \"Tokohu University\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t1.title) FROM papers AS t1 JOIN authorship AS t2 ON t1.paperid  =  t2.paperid JOIN inst AS t3 ON t2.instid  =  t3.instid WHERE t3.name  =  \"Tokohu University\""
+    },
+    {
+      "question_id": 179,
+      "db_id": "icfp_1",
+      "question": "Find the number of papers published by authors from the institution \"Tokohu University\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t1.title) FROM papers AS t1 JOIN authorship AS t2 ON t1.paperid  =  t2.paperid JOIN inst AS t3 ON t2.instid  =  t3.instid WHERE t3.name  =  \"Tokohu University\""
+    },
+    {
+      "question_id": 180,
+      "db_id": "icfp_1",
+      "question": "Find the number of papers published by the institution \"University of Pennsylvania\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t1.title) FROM papers AS t1 JOIN authorship AS t2 ON t1.paperid  =  t2.paperid JOIN inst AS t3 ON t2.instid  =  t3.instid WHERE t3.name  =  \"University of Pennsylvania\""
+    },
+    {
+      "question_id": 181,
+      "db_id": "icfp_1",
+      "question": "How many papers are written by authors from the institution \"University of Pennsylvania\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t1.title) FROM papers AS t1 JOIN authorship AS t2 ON t1.paperid  =  t2.paperid JOIN inst AS t3 ON t2.instid  =  t3.instid WHERE t3.name  =  \"University of Pennsylvania\""
+    },
+    {
+      "question_id": 184,
+      "db_id": "loan_1",
+      "question": "Find the total amount of loans provided by bank branches in the state of New York.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T2.amount) FROM bank AS T1 JOIN loan AS T2 ON T1.branch_id  =  T2.branch_id WHERE T1.state  =  'New York'"
+    },
+    {
+      "question_id": 185,
+      "db_id": "loan_1",
+      "question": "What is the total amount of money loaned by banks in New York state?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T2.amount) FROM bank AS T1 JOIN loan AS T2 ON T1.branch_id  =  T2.branch_id WHERE T1.state  =  'New York'"
+    },
+    {
+      "question_id": 186,
+      "db_id": "behavior_monitoring",
+      "question": "How many students are not involved in any behavior incident?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM STUDENTS WHERE student_id NOT IN ( SELECT student_id FROM Behavior_Incident )"
+    },
+    {
+      "question_id": 187,
+      "db_id": "college_1",
+      "question": "Find the number of professors in accounting department.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM professor AS T1 JOIN department AS T2 ON T1.dept_code  =  T2.dept_code WHERE DEPT_NAME  =  \"Accounting\""
+    },
+    {
+      "question_id": 188,
+      "db_id": "college_1",
+      "question": "How many professors are in the accounting dept?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM professor AS T1 JOIN department AS T2 ON T1.dept_code  =  T2.dept_code WHERE DEPT_NAME  =  \"Accounting\""
+    },
+    {
+      "question_id": 189,
+      "db_id": "college_1",
+      "question": "How many classes are professor whose last name is Graztevski has?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM employee AS T1 JOIN CLASS AS T2 ON T1.EMP_NUM  =  T2.PROF_NUM WHERE T1.EMP_LNAME  =  'Graztevski'"
+    },
+    {
+      "question_id": 190,
+      "db_id": "college_1",
+      "question": "How many classes does the professor whose last name is Graztevski teach?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM employee AS T1 JOIN CLASS AS T2 ON T1.EMP_NUM  =  T2.PROF_NUM WHERE T1.EMP_LNAME  =  'Graztevski'"
+    },
+    {
+      "question_id": 191,
+      "db_id": "college_1",
+      "question": "How many courses are offered by the Computer Info. Systems department?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM department AS T1 JOIN course AS T2 ON T1.dept_code  =  T2.dept_code WHERE dept_name  =  \"Computer Info. Systems\""
+    },
+    {
+      "question_id": 192,
+      "db_id": "college_1",
+      "question": "How many courses does the department of Computer Information Systmes offer?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM department AS T1 JOIN course AS T2 ON T1.dept_code  =  T2.dept_code WHERE dept_name  =  \"Computer Info. Systems\""
+    },
+    {
+      "question_id": 193,
+      "db_id": "college_1",
+      "question": "How many students enrolled in class ACCT-211?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM CLASS AS T1 JOIN enroll AS T2 ON T1.class_code  =  T2.class_code WHERE T1.crs_code  =  'ACCT-211'"
+    },
+    {
+      "question_id": 194,
+      "db_id": "college_1",
+      "question": "What are the total number of students enrolled in ACCT-211?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM CLASS AS T1 JOIN enroll AS T2 ON T1.class_code  =  T2.class_code WHERE T1.crs_code  =  'ACCT-211'"
+    },
+    {
+      "question_id": 195,
+      "db_id": "college_1",
+      "question": "How many students are enrolled in the class taught by some professor from the accounting department?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM CLASS AS T1 JOIN enroll AS T2 ON T1.class_code  =  T2.class_code JOIN course AS T3 ON T1.crs_code  =  T3.crs_code JOIN department AS T4 ON T3.dept_code  =  T4.dept_code WHERE T4.dept_name  =  'Accounting'"
+    },
+    {
+      "question_id": 196,
+      "db_id": "college_1",
+      "question": "How many students are enrolled in some classes that are taught by an accounting professor?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM CLASS AS T1 JOIN enroll AS T2 ON T1.class_code  =  T2.class_code JOIN course AS T3 ON T1.crs_code  =  T3.crs_code JOIN department AS T4 ON T3.dept_code  =  T4.dept_code WHERE T4.dept_name  =  'Accounting'"
+    },
+    {
+      "question_id": 197,
+      "db_id": "college_1",
+      "question": "How many professors who are from either Accounting or Biology department?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM professor AS T1 JOIN department AS T2 ON T1.dept_code  =  T2.dept_code WHERE T2.dept_name  =  'Accounting' OR T2.dept_name  =  'Biology'"
+    },
+    {
+      "question_id": 198,
+      "db_id": "college_1",
+      "question": "What is the number of professors who are in the Accounting or Biology departments?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM professor AS T1 JOIN department AS T2 ON T1.dept_code  =  T2.dept_code WHERE T2.dept_name  =  'Accounting' OR T2.dept_name  =  'Biology'"
+    },
+    {
+      "question_id": 199,
+      "db_id": "college_1",
+      "question": "What is the average gpa of the students enrolled in the course with code ACCT-211?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.stu_gpa) FROM enroll AS T1 JOIN student AS T2 ON T1.stu_num  =  T2.stu_num JOIN CLASS AS T3 ON T1.class_code  =  T3.class_code WHERE T3.crs_code  =  'ACCT-211'"
+    },
+    {
+      "question_id": 200,
+      "db_id": "college_1",
+      "question": "What is the average GPA of students taking ACCT-211?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.stu_gpa) FROM enroll AS T1 JOIN student AS T2 ON T1.stu_num  =  T2.stu_num JOIN CLASS AS T3 ON T1.class_code  =  T3.class_code WHERE T3.crs_code  =  'ACCT-211'"
+    },
+    {
+      "question_id": 201,
+      "db_id": "sports_competition",
+      "question": "What is the average points of players from club with name \"AIB\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.Points) FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID WHERE T1.name  =  \"AIB\""
+    },
+    {
+      "question_id": 202,
+      "db_id": "sports_competition",
+      "question": "What is the average number of points for players from the \"AIB\" club?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.Points) FROM club AS T1 JOIN player AS T2 ON T1.Club_ID  =  T2.Club_ID WHERE T1.name  =  \"AIB\""
+    },
+    {
+      "question_id": 203,
+      "db_id": "music_1",
+      "question": "What is the average rating of songs produced by female artists?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.rating) FROM artist AS T1 JOIN song AS T2 ON T1.artist_name  =  T2.artist_name WHERE T1.gender  =  \"Female\""
+    },
+    {
+      "question_id": 204,
+      "db_id": "music_1",
+      "question": "How many songs, on average, are sung by a female artist?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.rating) FROM artist AS T1 JOIN song AS T2 ON T1.artist_name  =  T2.artist_name WHERE T1.gender  =  \"Female\""
+    },
+    {
+      "question_id": 206,
+      "db_id": "baseball_1",
+      "question": "Compute the average salary of the players in the team called 'Boston Red Stockings'.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T1.salary) FROM salary AS T1 JOIN team AS T2 ON T1.team_id  =  T2.team_id_br WHERE T2.name  = 'Boston Red Stockings'"
+    },
+    {
+      "question_id": 210,
+      "db_id": "baseball_1",
+      "question": "How many players were in the team Boston Red Stockings in 2000?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM salary AS T1 JOIN team AS T2 ON T1.team_id  =  T2.team_id_br WHERE T2.name  = 'Boston Red Stockings' AND T1.year  =  2000"
+    },
+    {
+      "question_id": 211,
+      "db_id": "baseball_1",
+      "question": "How many players did Boston Red Stockings have in 2000?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM salary AS T1 JOIN team AS T2 ON T1.team_id  =  T2.team_id_br WHERE T2.name  = 'Boston Red Stockings' AND T1.year  =  2000"
+    },
+    {
+      "question_id": 212,
+      "db_id": "baseball_1",
+      "question": "How many games were played in park \"Columbia Park\" in 1907?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM home_game AS T1 JOIN park AS T2 ON T1.park_id  =  T2.park_id WHERE T1.year = 1907 AND T2.park_name = 'Columbia Park';"
+    },
+    {
+      "question_id": 213,
+      "db_id": "baseball_1",
+      "question": "Count the number of games taken place in park \"Columbia Park\" in 1907.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM home_game AS T1 JOIN park AS T2 ON T1.park_id  =  T2.park_id WHERE T1.year = 1907 AND T2.park_name = 'Columbia Park';"
+    },
+    {
+      "question_id": 214,
+      "db_id": "baseball_1",
+      "question": "Find the number of games taken place in city Atlanta in 2000.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM home_game AS T1 JOIN park AS T2 ON T1.park_id  =  T2.park_id WHERE T1.year  =  2000 AND T2.city  =  'Atlanta';"
+    },
+    {
+      "question_id": 215,
+      "db_id": "baseball_1",
+      "question": "How much did the the player with first name Len and last name Barker earn between 1985 to 1990 in total?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T1.salary) FROM salary AS T1 JOIN player AS T2 ON T1.player_id = T2.player_id WHERE T2.name_first  =  'Len' AND T2.name_last = 'Barker' AND T1.year BETWEEN 1985 AND 1990;"
+    },
+    {
+      "question_id": 216,
+      "db_id": "baseball_1",
+      "question": "Compute the total salary that the player with first name Len and last name Barker received between 1985 to 1990.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T1.salary) FROM salary AS T1 JOIN player AS T2 ON T1.player_id = T2.player_id WHERE T2.name_first  =  'Len' AND T2.name_last = 'Barker' AND T1.year BETWEEN 1985 AND 1990;"
+    },
+    {
+      "question_id": 220,
+      "db_id": "mountain_photos",
+      "question": "How many distinct kinds of camera lenses are used to take photos of mountains in the country 'Ethiopia'?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT T2.camera_lens_id) FROM mountain AS T1 JOIN photos AS T2 ON T1.id  =  T2.mountain_id WHERE T1.country  =  'Ethiopia'"
+    },
+    {
+      "question_id": 221,
+      "db_id": "e_learning",
+      "question": "How many students did not have any course enrollment?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Students WHERE student_id NOT IN (SELECT student_id FROM Student_Course_Enrolment)"
+    },
+    {
+      "question_id": 222,
+      "db_id": "e_learning",
+      "question": "Count the number of students who did not enroll in any course.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Students WHERE student_id NOT IN (SELECT student_id FROM Student_Course_Enrolment)"
+    },
+    {
+      "question_id": 225,
+      "db_id": "hospital_1",
+      "question": "Find the number of patients who are not using the medication of Procrastin-X.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM patient WHERE SSN NOT IN ( SELECT T1.patient FROM Prescribes AS T1 JOIN Medication AS T2 ON T1.Medication  =  T2.Code WHERE T2.name  =  'Procrastin-X' )"
+    },
+    {
+      "question_id": 226,
+      "db_id": "hospital_1",
+      "question": "How many patients are not using Procrastin-X as medication?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM patient WHERE SSN NOT IN ( SELECT T1.patient FROM Prescribes AS T1 JOIN Medication AS T2 ON T1.Medication  =  T2.Code WHERE T2.name  =  'Procrastin-X' )"
+    },
+    {
+      "question_id": 235,
+      "db_id": "film_rank",
+      "question": "What is the average number of cities of markets with low film market estimate bigger than 10000?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.Number_cities) FROM film_market_estimation AS T1 JOIN market AS T2 ON T1.Market_ID  =  T2.Market_ID WHERE T1.Low_Estimate  >  10000"
+    },
+    {
+      "question_id": 236,
+      "db_id": "film_rank",
+      "question": "Give the average number of cities within markets that had a low market estimation larger than 10000?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.Number_cities) FROM film_market_estimation AS T1 JOIN market AS T2 ON T1.Market_ID  =  T2.Market_ID WHERE T1.Low_Estimate  >  10000"
+    },
+    {
+      "question_id": 237,
+      "db_id": "club_1",
+      "question": "How many members does the club \"Tennis Club\" has?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Tennis Club\""
+    },
+    {
+      "question_id": 238,
+      "db_id": "club_1",
+      "question": "Count the members of the club \"Tennis Club\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Tennis Club\""
+    },
+    {
+      "question_id": 239,
+      "db_id": "club_1",
+      "question": "Find the number of members of club \"Pen and Paper Gaming\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Pen and Paper Gaming\""
+    },
+    {
+      "question_id": 240,
+      "db_id": "club_1",
+      "question": "How many people have membership in the club \"Pen and Paper Gaming\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Pen and Paper Gaming\""
+    },
+    {
+      "question_id": 241,
+      "db_id": "club_1",
+      "question": "How many clubs does \"Linda Smith\" belong to?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t3.fname  =  \"Linda\" AND t3.lname  =  \"Smith\""
+    },
+    {
+      "question_id": 242,
+      "db_id": "club_1",
+      "question": "How many clubs does \"Linda Smith\" have membership for?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t3.fname  =  \"Linda\" AND t3.lname  =  \"Smith\""
+    },
+    {
+      "question_id": 243,
+      "db_id": "club_1",
+      "question": "Find the number of clubs where \"Tracy Kim\" is a member.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t3.fname  =  \"Tracy\" AND t3.lname  =  \"Kim\""
+    },
+    {
+      "question_id": 244,
+      "db_id": "club_1",
+      "question": "For how many clubs is \"Tracy Kim\" a member?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t3.fname  =  \"Tracy\" AND t3.lname  =  \"Kim\""
+    },
+    {
+      "question_id": 245,
+      "db_id": "club_1",
+      "question": "How many different roles are there in the club \"Bootup Baltimore\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t2.position) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid WHERE t1.clubname  =  \"Bootup Baltimore\""
+    },
+    {
+      "question_id": 246,
+      "db_id": "club_1",
+      "question": "Count the number of different positions in the club \"Bootup Baltimore\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t2.position) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid WHERE t1.clubname  =  \"Bootup Baltimore\""
+    },
+    {
+      "question_id": 247,
+      "db_id": "club_1",
+      "question": "How many members of \"Bootup Baltimore\" are older than 18?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Bootup Baltimore\" AND t3.age  >  18"
+    },
+    {
+      "question_id": 248,
+      "db_id": "club_1",
+      "question": "Count the number of members in club \"Bootup Baltimore\" whose age is above 18.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Bootup Baltimore\" AND t3.age  >  18"
+    },
+    {
+      "question_id": 249,
+      "db_id": "club_1",
+      "question": "How many members of club \"Bootup Baltimore\" are younger than 18?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Bootup Baltimore\" AND t3.age  <  18"
+    },
+    {
+      "question_id": 250,
+      "db_id": "club_1",
+      "question": "Count the number of members in club \"Bootup Baltimore\" whose age is below 18.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Bootup Baltimore\" AND t3.age  <  18"
+    },
+    {
+      "question_id": 251,
+      "db_id": "club_1",
+      "question": "How many clubs does the student named \"Eric Tai\" belong to?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t1.clubname) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t3.fname  =  \"Eric\" AND t3.lname  =  \"Tai\""
+    },
+    {
+      "question_id": 252,
+      "db_id": "club_1",
+      "question": "Count the number of clubs for which the student named \"Eric Tai\" is a member.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t1.clubname) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t3.fname  =  \"Eric\" AND t3.lname  =  \"Tai\""
+    },
+    {
+      "question_id": 253,
+      "db_id": "club_1",
+      "question": "What is the average age of the members of the club \"Bootup Baltimore\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(t3.age) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Bootup Baltimore\""
+    },
+    {
+      "question_id": 254,
+      "db_id": "club_1",
+      "question": "Find the average age of the members in the club \"Bootup Baltimore\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(t3.age) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Bootup Baltimore\""
+    },
+    {
+      "question_id": 255,
+      "db_id": "club_1",
+      "question": "Find the average age of members of the club \"Hopkins Student Enterprises\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(t3.age) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Hopkins Student Enterprises\""
+    },
+    {
+      "question_id": 256,
+      "db_id": "club_1",
+      "question": "On average, how old are the members in the club \"Hopkins Student Enterprises\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(t3.age) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Hopkins Student Enterprises\""
+    },
+    {
+      "question_id": 257,
+      "db_id": "club_1",
+      "question": "Retrieve the average age of members of the club \"Tennis Club\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(t3.age) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Tennis Club\""
+    },
+    {
+      "question_id": 258,
+      "db_id": "club_1",
+      "question": "Compute the average age of the members in the club \"Tennis Club\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(t3.age) FROM club AS t1 JOIN member_of_club AS t2 ON t1.clubid  =  t2.clubid JOIN student AS t3 ON t2.stuid  =  t3.stuid WHERE t1.clubname  =  \"Tennis Club\""
+    },
+    {
+      "question_id": 259,
+      "db_id": "tracking_grants_for_research",
+      "question": "What is the total grant amount of the organisations described as research?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(grant_amount) FROM Grants AS T1 JOIN Organisations AS T2 ON T1.organisation_id  =  T2.organisation_id JOIN organisation_Types AS T3 ON T2.organisation_type  =  T3.organisation_type WHERE T3.organisation_type_description  =  'Research'"
+    },
+    {
+      "question_id": 260,
+      "db_id": "tracking_grants_for_research",
+      "question": "What is the total amount of grant money for research?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(grant_amount) FROM Grants AS T1 JOIN Organisations AS T2 ON T1.organisation_id  =  T2.organisation_id JOIN organisation_Types AS T3 ON T2.organisation_type  =  T3.organisation_type WHERE T3.organisation_type_description  =  'Research'"
+    },
+    {
+      "question_id": 261,
+      "db_id": "network_2",
+      "question": "How many friends does Dan have?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(T2.friend) FROM Person AS T1 JOIN PersonFriend AS T2 ON T1.name  =  T2.name WHERE T1.name  =  'Dan'"
+    },
+    {
+      "question_id": 262,
+      "db_id": "network_2",
+      "question": "How many friends does Dan have?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(T2.friend) FROM Person AS T1 JOIN PersonFriend AS T2 ON T1.name  =  T2.name WHERE T1.name  =  'Dan'"
+    },
+    {
+      "question_id": 263,
+      "db_id": "network_2",
+      "question": "What is the total number of people who has no friend living in the city of Austin.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT name) FROM PersonFriend WHERE friend NOT IN (SELECT name FROM person WHERE city  =  'Austin')"
+    },
+    {
+      "question_id": 264,
+      "db_id": "network_2",
+      "question": "What is the total number of people who have no friends living in Austin?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT name) FROM PersonFriend WHERE friend NOT IN (SELECT name FROM person WHERE city  =  'Austin')"
+    },
+    {
+      "question_id": 265,
+      "db_id": "document_management",
+      "question": "Find the average access counts of documents with functional area \"Acknowledgement\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(t1.access_count) FROM documents AS t1 JOIN document_functional_areas AS t2 ON t1.document_code  =  t2.document_code JOIN functional_areas AS t3 ON t2.functional_area_code  =  t3.functional_area_code WHERE t3.functional_area_description  =  \"Acknowledgement\""
+    },
+    {
+      "question_id": 266,
+      "db_id": "document_management",
+      "question": "What are the average access counts of documents that have the functional area description \"Acknowledgement\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(t1.access_count) FROM documents AS t1 JOIN document_functional_areas AS t2 ON t1.document_code  =  t2.document_code JOIN functional_areas AS t3 ON t2.functional_area_code  =  t3.functional_area_code WHERE t3.functional_area_description  =  \"Acknowledgement\""
+    },
+    {
+      "question_id": 269,
+      "db_id": "department_store",
+      "question": "How many department stores does the store chain South have?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM department_stores AS T1 JOIN department_store_chain AS T2 ON T1.dept_store_chain_id  =  T2.dept_store_chain_id WHERE T2.dept_store_chain_name  =  \"South\""
+    },
+    {
+      "question_id": 270,
+      "db_id": "department_store",
+      "question": "Count the number of stores the chain South has.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM department_stores AS T1 JOIN department_store_chain AS T2 ON T1.dept_store_chain_id  =  T2.dept_store_chain_id WHERE T2.dept_store_chain_name  =  \"South\""
+    },
+    {
+      "question_id": 271,
+      "db_id": "aircraft",
+      "question": "What is the average total number of passengers of airports that are associated with aircraft \"Robinson R-22\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T3.Total_Passengers) FROM aircraft AS T1 JOIN airport_aircraft AS T2 ON T1.Aircraft_ID  =  T2.Aircraft_ID JOIN airport AS T3 ON T2.Airport_ID  =  T3.Airport_ID WHERE T1.Aircraft  =  \"Robinson R-22\""
+    },
+    {
+      "question_id": 272,
+      "db_id": "aircraft",
+      "question": "What is the average total number of passengers for all airports that the aircraft \"Robinson R-22\" visits?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T3.Total_Passengers) FROM aircraft AS T1 JOIN airport_aircraft AS T2 ON T1.Aircraft_ID  =  T2.Aircraft_ID JOIN airport AS T3 ON T2.Airport_ID  =  T3.Airport_ID WHERE T1.Aircraft  =  \"Robinson R-22\""
+    },
+    {
+      "question_id": 273,
+      "db_id": "local_govt_and_lot",
+      "question": "How many distinct locations have the things with service detail 'Unsatisfied' been located in?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT T2.Location_Code) FROM Things AS T1 JOIN Timed_Locations_of_Things AS T2 ON T1.thing_id  =  T2.thing_id WHERE T1.service_details  =  'Unsatisfied'"
+    },
+    {
+      "question_id": 274,
+      "db_id": "local_govt_and_lot",
+      "question": "How many customers did not have any event?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM customers WHERE customer_id NOT IN ( SELECT customer_id FROM customer_events )"
+    },
+    {
+      "question_id": 275,
+      "db_id": "soccer_2",
+      "question": "Find the average hours for the students whose tryout decision is no.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T1.HS) FROM player AS T1 JOIN tryout AS T2 ON T1.pID  =  T2.pID WHERE T2.decision  =  'no'"
+    },
+    {
+      "question_id": 276,
+      "db_id": "soccer_2",
+      "question": "What is the average number of hours spent practicing for students who got rejected?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T1.HS) FROM player AS T1 JOIN tryout AS T2 ON T1.pID  =  T2.pID WHERE T2.decision  =  'no'"
+    },
+    {
+      "question_id": 277,
+      "db_id": "soccer_2",
+      "question": "How many states that have some college students playing in the mid position but not in the goalie position.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT COUNT(*) FROM (SELECT T1.state FROM college AS T1 JOIN tryout AS T2 ON T1.cName  =  T2.cName WHERE T2.pPos  =  'mid' EXCEPT SELECT T1.state FROM college AS T1 JOIN tryout AS T2 ON T1.cName  =  T2.cName WHERE T2.pPos  =  'goalie')"
+    },
+    {
+      "question_id": 278,
+      "db_id": "soccer_2",
+      "question": "What is the count of states with college students playing in the mid position but not as goalies?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT COUNT(*) FROM (SELECT T1.state FROM college AS T1 JOIN tryout AS T2 ON T1.cName  =  T2.cName WHERE T2.pPos  =  'mid' EXCEPT SELECT T1.state FROM college AS T1 JOIN tryout AS T2 ON T1.cName  =  T2.cName WHERE T2.pPos  =  'goalie')"
+    },
+    {
+      "question_id": 279,
+      "db_id": "cre_Drama_Workshop_Groups",
+      "question": "What are the total order quantities of photo products?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T1.Order_Quantity) FROM ORDER_ITEMS AS T1 JOIN Products AS T2 ON T1.Product_ID  =  T2.Product_ID WHERE T2.Product_Name  =  \"photo\""
+    },
+    {
+      "question_id": 280,
+      "db_id": "cre_Drama_Workshop_Groups",
+      "question": "Compute the total order quantities of the product \"photo\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T1.Order_Quantity) FROM ORDER_ITEMS AS T1 JOIN Products AS T2 ON T1.Product_ID  =  T2.Product_ID WHERE T2.Product_Name  =  \"photo\""
+    },
+    {
+      "question_id": 281,
+      "db_id": "tracking_software_problems",
+      "question": "How many problems are there for product voluptatem?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM product AS T1 JOIN problems AS T2 ON T1.product_id = T2.product_id WHERE T1.product_name = \"voluptatem\""
+    },
+    {
+      "question_id": 282,
+      "db_id": "tracking_software_problems",
+      "question": "How many problems did the product called \"voluptatem\" have in record?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM product AS T1 JOIN problems AS T2 ON T1.product_id = T2.product_id WHERE T1.product_name = \"voluptatem\""
+    },
+    {
+      "question_id": 283,
+      "db_id": "shop_membership",
+      "question": "What is the sum of total pounds of purchase in year 2018 for all branches in London?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(total_pounds) FROM purchase AS T1 JOIN branch AS T2 ON T1.branch_id  =  T2.branch_id WHERE T2.city  =  'London' AND T1.year  =  2018"
+    },
+    {
+      "question_id": 284,
+      "db_id": "shop_membership",
+      "question": "How many total pounds were purchased in the year 2018 at all London branches?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(total_pounds) FROM purchase AS T1 JOIN branch AS T2 ON T1.branch_id  =  T2.branch_id WHERE T2.city  =  'London' AND T1.year  =  2018"
+    },
+    {
+      "question_id": 285,
+      "db_id": "shop_membership",
+      "question": "What is the total number of purchases for members with level 6?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM purchase AS T1 JOIN member AS T2 ON T1.member_id  =  T2.member_id WHERE T2.level  =  6"
+    },
+    {
+      "question_id": 286,
+      "db_id": "shop_membership",
+      "question": "What are the total purchases for members rated at level 6?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM purchase AS T1 JOIN member AS T2 ON T1.member_id  =  T2.member_id WHERE T2.level  =  6"
+    },
+    {
+      "question_id": 295,
+      "db_id": "products_gen_characteristics",
+      "question": "How many characteristics does the product named \"sesame\" have?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id WHERE t1.product_name  =  \"sesame\""
+    },
+    {
+      "question_id": 296,
+      "db_id": "products_gen_characteristics",
+      "question": "Count the number of characteristics the product 'sesame' has.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id WHERE t1.product_name  =  \"sesame\""
+    },
+    {
+      "question_id": 297,
+      "db_id": "products_gen_characteristics",
+      "question": "How many distinct characteristic names does the product \"cumin\" have?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t3.characteristic_name) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id WHERE t1.product_name  =  \"sesame\""
+    },
+    {
+      "question_id": 298,
+      "db_id": "products_gen_characteristics",
+      "question": "Count the number of different characteristic names the product 'cumin' has.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t3.characteristic_name) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id WHERE t1.product_name  =  \"sesame\""
+    },
+    {
+      "question_id": 299,
+      "db_id": "products_gen_characteristics",
+      "question": "How many characteristics does the product named \"laurel\" have?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id WHERE t1.product_name  =  \"laurel\""
+    },
+    {
+      "question_id": 300,
+      "db_id": "products_gen_characteristics",
+      "question": "Count the number of characteristics of the product named 'laurel'.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id WHERE t1.product_name  =  \"laurel\""
+    },
+    {
+      "question_id": 301,
+      "db_id": "products_gen_characteristics",
+      "question": "Find the number of characteristics that the product \"flax\" has.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id WHERE t1.product_name  =  \"flax\""
+    },
+    {
+      "question_id": 302,
+      "db_id": "products_gen_characteristics",
+      "question": "Count the number of characteristics of the 'flax' product.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id WHERE t1.product_name  =  \"flax\""
+    },
+    {
+      "question_id": 303,
+      "db_id": "products_gen_characteristics",
+      "question": "How many products have the characteristic named \"hot\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id WHERE t3.characteristic_name  =  \"hot\""
+    },
+    {
+      "question_id": 304,
+      "db_id": "products_gen_characteristics",
+      "question": "Count the number of products with the 'hot' charactersitic.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id WHERE t3.characteristic_name  =  \"hot\""
+    },
+    {
+      "question_id": 305,
+      "db_id": "products_gen_characteristics",
+      "question": "Find the number of the products that have their color described as \"red\" and have a characteristic named \"slow\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id JOIN ref_colors AS t4 ON t1.color_code  =  t4.color_code WHERE t4.color_description  =  \"red\" AND t3.characteristic_name  =  \"slow\""
+    },
+    {
+      "question_id": 306,
+      "db_id": "products_gen_characteristics",
+      "question": "How many products have the color description 'red' and the characteristic name 'slow'?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id JOIN ref_colors AS t4 ON t1.color_code  =  t4.color_code WHERE t4.color_description  =  \"red\" AND t3.characteristic_name  =  \"slow\""
+    },
+    {
+      "question_id": 307,
+      "db_id": "products_gen_characteristics",
+      "question": "Count the products that have the color description \"white\" or have the characteristic name \"hot\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id JOIN ref_colors AS t4 ON t1.color_code  =  t4.color_code WHERE t4.color_description  =  \"white\" OR t3.characteristic_name  =  \"hot\""
+    },
+    {
+      "question_id": 308,
+      "db_id": "products_gen_characteristics",
+      "question": "How many products have their color described as 'white' or have a characteristic with the name 'hot'?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM products AS t1 JOIN product_characteristics AS t2 ON t1.product_id  =  t2.product_id JOIN CHARACTERISTICS AS t3 ON t2.characteristic_id  =  t3.characteristic_id JOIN ref_colors AS t4 ON t1.color_code  =  t4.color_code WHERE t4.color_description  =  \"white\" OR t3.characteristic_name  =  \"hot\""
+    },
+    {
+      "question_id": 309,
+      "db_id": "products_gen_characteristics",
+      "question": "How many colors are never used by any product?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Ref_colors WHERE color_code NOT IN ( SELECT color_code FROM products )"
+    },
+    {
+      "question_id": 310,
+      "db_id": "products_gen_characteristics",
+      "question": "Count the number of colors that are not used in any products.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Ref_colors WHERE color_code NOT IN ( SELECT color_code FROM products )"
+    },
+    {
+      "question_id": 311,
+      "db_id": "dorm_1",
+      "question": "Find the total number of students living in the male dorm (with gender M).",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM student AS T1 JOIN lives_in AS T2 ON T1.stuid  =  T2.stuid JOIN dorm AS T3 ON T3.dormid  =  T2.dormid WHERE T3.gender  =  'M'"
+    },
+    {
+      "question_id": 312,
+      "db_id": "dorm_1",
+      "question": "What are the total number of students who are living in a male dorm?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM student AS T1 JOIN lives_in AS T2 ON T1.stuid  =  T2.stuid JOIN dorm AS T3 ON T3.dormid  =  T2.dormid WHERE T3.gender  =  'M'"
+    },
+    {
+      "question_id": 313,
+      "db_id": "dorm_1",
+      "question": "Find the number of female students (with F sex) living in Smith Hall",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM student AS T1 JOIN lives_in AS T2 ON T1.stuid  =  T2.stuid JOIN dorm AS T3 ON T3.dormid  =  T2.dormid WHERE T3.dorm_name  =  'Smith Hall' AND T1.sex  =  'F'"
+    },
+    {
+      "question_id": 314,
+      "db_id": "dorm_1",
+      "question": "How many female students live in Smith Hall?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM student AS T1 JOIN lives_in AS T2 ON T1.stuid  =  T2.stuid JOIN dorm AS T3 ON T3.dormid  =  T2.dormid WHERE T3.dorm_name  =  'Smith Hall' AND T1.sex  =  'F'"
+    },
+    {
+      "question_id": 315,
+      "db_id": "cre_Theme_park",
+      "question": "How many tourists did not make any visit?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Visitors WHERE Tourist_ID NOT IN ( SELECT Tourist_ID FROM Visits )"
+    },
+    {
+      "question_id": 316,
+      "db_id": "cre_Theme_park",
+      "question": "Count the number of tourists who did not visit any place.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Visitors WHERE Tourist_ID NOT IN ( SELECT Tourist_ID FROM Visits )"
+    },
+    {
+      "question_id": 317,
+      "db_id": "customers_and_addresses",
+      "question": "How many customers are living in city \"Lake Geovannyton\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM customers AS t1 JOIN customer_addresses AS t2 ON t1.customer_id  =  t2.customer_id JOIN addresses AS t3 ON t2.address_id  =  t3.address_id WHERE t3.city  =  \"Lake Geovannyton\""
+    },
+    {
+      "question_id": 318,
+      "db_id": "customers_and_addresses",
+      "question": "Find the number of customers who live in the city called Lake Geovannyton.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM customers AS t1 JOIN customer_addresses AS t2 ON t1.customer_id  =  t2.customer_id JOIN addresses AS t3 ON t2.address_id  =  t3.address_id WHERE t3.city  =  \"Lake Geovannyton\""
+    },
+    {
+      "question_id": 319,
+      "db_id": "customers_and_addresses",
+      "question": "How many types of products have Rodrick Heaney bought in total?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t3.product_id) FROM customers AS t1 JOIN customer_orders AS t2 ON t1.customer_id  =  t2.customer_id JOIN order_items AS t3 ON t2.order_id  =  t3.order_id WHERE t1.customer_name  =  \"Rodrick Heaney\""
+    },
+    {
+      "question_id": 320,
+      "db_id": "customers_and_addresses",
+      "question": "Find the number of distinct products Rodrick Heaney has bought so far.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT t3.product_id) FROM customers AS t1 JOIN customer_orders AS t2 ON t1.customer_id  =  t2.customer_id JOIN order_items AS t3 ON t2.order_id  =  t3.order_id WHERE t1.customer_name  =  \"Rodrick Heaney\""
+    },
+    {
+      "question_id": 321,
+      "db_id": "customers_and_addresses",
+      "question": "What is the total quantity of products purchased by \"Rodrick Heaney\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(t3.order_quantity) FROM customers AS t1 JOIN customer_orders AS t2 ON t1.customer_id  =  t2.customer_id JOIN order_items AS t3 ON t2.order_id  =  t3.order_id WHERE t1.customer_name  =  \"Rodrick Heaney\""
+    },
+    {
+      "question_id": 322,
+      "db_id": "customers_and_addresses",
+      "question": "Tell me the total quantity of products bought by the customer called \"Rodrick Heaney\".",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(t3.order_quantity) FROM customers AS t1 JOIN customer_orders AS t2 ON t1.customer_id  =  t2.customer_id JOIN order_items AS t3 ON t2.order_id  =  t3.order_id WHERE t1.customer_name  =  \"Rodrick Heaney\""
+    },
+    {
+      "question_id": 323,
+      "db_id": "customers_and_addresses",
+      "question": "What is the total number of products that are in orders with status \"Cancelled\"?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(t2.order_quantity) FROM customer_orders AS t1 JOIN order_items AS t2 ON t1.order_id  =  t2.order_id WHERE t1.order_status  =  \"Cancelled\""
+    },
+    {
+      "question_id": 324,
+      "db_id": "customers_and_addresses",
+      "question": "Find the total quantity of products associated with the orders in the \"Cancelled\" status.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(t2.order_quantity) FROM customer_orders AS t1 JOIN order_items AS t2 ON t1.order_id  =  t2.order_id WHERE t1.order_status  =  \"Cancelled\""
+    },
+    {
+      "question_id": 325,
+      "db_id": "customers_and_addresses",
+      "question": "Find the total amount of products ordered before 2018-03-17 07:13:53.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(t2.order_quantity) FROM customer_orders AS t1 JOIN order_items AS t2 ON t1.order_id  =  t2.order_id WHERE t1.order_date  <  \"2018-03-17 07:13:53\""
+    },
+    {
+      "question_id": 326,
+      "db_id": "customers_and_addresses",
+      "question": "What is the total amount of products purchased before 2018-03-17 07:13:53?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(t2.order_quantity) FROM customer_orders AS t1 JOIN order_items AS t2 ON t1.order_id  =  t2.order_id WHERE t1.order_date  <  \"2018-03-17 07:13:53\""
+    },
+    {
+      "question_id": 327,
+      "db_id": "music_4",
+      "question": "What is the average weeks on top of volumes associated with the artist aged 25 or younger?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.Weeks_on_Top) FROM artist AS T1 JOIN volume AS T2 ON T1.Artist_ID  =  T2.Artist_ID WHERE T1.age  <=  25"
+    },
+    {
+      "question_id": 328,
+      "db_id": "music_4",
+      "question": "Return the average number of weeks on top for volumes by artists that are at most 25 years old.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(T2.Weeks_on_Top) FROM artist AS T1 JOIN volume AS T2 ON T1.Artist_ID  =  T2.Artist_ID WHERE T1.age  <=  25"
+    },
+    {
+      "question_id": 329,
+      "db_id": "roller_coaster",
+      "question": "How many countries do not have an roller coaster longer than 3000?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM country WHERE country_id NOT IN ( SELECT country_id FROM roller_coaster WHERE LENGTH  >  3000 )"
+    },
+    {
+      "question_id": 330,
+      "db_id": "flight_company",
+      "question": "How many airports haven't the pilot 'Thompson' driven an aircraft?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM airport WHERE id NOT IN ( SELECT airport_id FROM flight WHERE pilot  =  'Thompson' );"
+    },
+    {
+      "question_id": 331,
+      "db_id": "cre_Docs_and_Epenses",
+      "question": "How many documents do not have any expense?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Documents WHERE document_id NOT IN ( SELECT document_id FROM Documents_with_expenses )"
+    },
+    {
+      "question_id": 332,
+      "db_id": "cre_Docs_and_Epenses",
+      "question": "Count the number of documents that do not have expenses.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Documents WHERE document_id NOT IN ( SELECT document_id FROM Documents_with_expenses )"
+    },
+    {
+      "question_id": 335,
+      "db_id": "scientist_1",
+      "question": "Find the number of scientists who are not assigned to any project.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM scientists WHERE ssn NOT IN (SELECT scientist FROM AssignedTo)"
+    },
+    {
+      "question_id": 336,
+      "db_id": "scientist_1",
+      "question": "How many scientists do not have any projects assigned to them?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM scientists WHERE ssn NOT IN (SELECT scientist FROM AssignedTo)"
+    },
+    {
+      "question_id": 340,
+      "db_id": "driving_school",
+      "question": "How long is the total lesson time took by customer with first name as Rylan and last name as Goodwin?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T1.lesson_time) FROM Lessons AS T1 JOIN Customers AS T2 ON T1.customer_id  = T2.customer_id WHERE T2.first_name = \"Rylan\" AND T2.last_name = \"Goodwin\";"
+    },
+    {
+      "question_id": 341,
+      "db_id": "driving_school",
+      "question": "How long is the total lesson time took by the customer named Rylan Goodwin?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T1.lesson_time) FROM Lessons AS T1 JOIN Customers AS T2 ON T1.customer_id  = T2.customer_id WHERE T2.first_name = \"Rylan\" AND T2.last_name = \"Goodwin\";"
+    },
+    {
+      "question_id": 342,
+      "db_id": "driving_school",
+      "question": "How many lessons taken by customer with first name as Rylan and last name as Goodwin were completed?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Lessons AS T1 JOIN Customers AS T2 ON T1.customer_id  = T2.customer_id WHERE T2.first_name = \"Rylan\" AND T2.last_name = \"Goodwin\" AND T1.lesson_status_code = \"Completed\";"
+    },
+    {
+      "question_id": 343,
+      "db_id": "driving_school",
+      "question": "How many lessons did the customer Ryan Goodwin complete?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Lessons AS T1 JOIN Customers AS T2 ON T1.customer_id  = T2.customer_id WHERE T2.first_name = \"Rylan\" AND T2.last_name = \"Goodwin\" AND T1.lesson_status_code = \"Completed\";"
+    },
+    {
+      "question_id": 344,
+      "db_id": "driving_school",
+      "question": "How much in total does customer with first name as Carole and last name as Bernhard paid?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T1.amount_payment) FROM Customer_Payments AS T1 JOIN Customers AS T2 ON T1.customer_id = T2.customer_id WHERE T2.first_name = \"Carole\" AND T2.last_name = \"Bernhard\""
+    },
+    {
+      "question_id": 345,
+      "db_id": "driving_school",
+      "question": "What is the total amount of moeny paid by the customer Carole Bernhard?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(T1.amount_payment) FROM Customer_Payments AS T1 JOIN Customers AS T2 ON T1.customer_id = T2.customer_id WHERE T2.first_name = \"Carole\" AND T2.last_name = \"Bernhard\""
+    },
+    {
+      "question_id": 346,
+      "db_id": "driving_school",
+      "question": "List the number of customers that did not have any payment history.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Customers WHERE customer_id NOT IN ( SELECT customer_id FROM Customer_Payments );"
+    },
+    {
+      "question_id": 347,
+      "db_id": "driving_school",
+      "question": "How many customers have no payment histories?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Customers WHERE customer_id NOT IN ( SELECT customer_id FROM Customer_Payments );"
+    },
+    {
+      "question_id": 348,
+      "db_id": "driving_school",
+      "question": "How many lessons taught by staff whose first name has letter 'a' in it?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Lessons AS T1 JOIN Staff AS T2 ON T1.staff_id = T2.staff_id WHERE T2.first_name LIKE \"%a%\""
+    },
+    {
+      "question_id": 349,
+      "db_id": "driving_school",
+      "question": "How many lessons were taught by a staff member whose first name has the letter 'a' in it?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Lessons AS T1 JOIN Staff AS T2 ON T1.staff_id = T2.staff_id WHERE T2.first_name LIKE \"%a%\""
+    },
+    {
+      "question_id": 350,
+      "db_id": "driving_school",
+      "question": "How long is the total lesson time taught by staff with first name as Janessa and last name as Sawayn?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(lesson_time) FROM Lessons AS T1 JOIN Staff AS T2 ON T1.staff_id = T2.staff_id WHERE T2.first_name = \"Janessa\" AND T2.last_name = \"Sawayn\";"
+    },
+    {
+      "question_id": 351,
+      "db_id": "driving_school",
+      "question": "What is the total time for all lessons taught by Janessa Sawayn?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT sum(lesson_time) FROM Lessons AS T1 JOIN Staff AS T2 ON T1.staff_id = T2.staff_id WHERE T2.first_name = \"Janessa\" AND T2.last_name = \"Sawayn\";"
+    },
+    {
+      "question_id": 352,
+      "db_id": "driving_school",
+      "question": "What is average lesson price taught by staff with first name as Janessa and last name as Sawayn?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(price) FROM Lessons AS T1 JOIN Staff AS T2 ON T1.staff_id = T2.staff_id WHERE T2.first_name = \"Janessa\" AND T2.last_name = \"Sawayn\";"
+    },
+    {
+      "question_id": 353,
+      "db_id": "driving_school",
+      "question": "What is the average price for a lesson taught by Janessa Sawayn?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT avg(price) FROM Lessons AS T1 JOIN Staff AS T2 ON T1.staff_id = T2.staff_id WHERE T2.first_name = \"Janessa\" AND T2.last_name = \"Sawayn\";"
+    },
+    {
+      "question_id": 354,
+      "db_id": "driving_school",
+      "question": "How many lesson does customer with first name Ray took?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Lessons AS T1 JOIN Customers AS T2 ON T1.customer_id  = T2.customer_id WHERE T2.first_name = \"Ray\""
+    },
+    {
+      "question_id": 355,
+      "db_id": "driving_school",
+      "question": "How many lessons did the customer with the first name Ray take?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM Lessons AS T1 JOIN Customers AS T2 ON T1.customer_id  = T2.customer_id WHERE T2.first_name = \"Ray\""
+    },
+    {
+      "question_id": 358,
+      "db_id": "flight_4",
+      "question": "Find the number of routes operated by American Airlines.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM airlines AS T1 JOIN routes AS T2 ON T1.alid  =  T2.alid WHERE T1.name  =  'American Airlines'"
+    },
+    {
+      "question_id": 359,
+      "db_id": "flight_4",
+      "question": "How many routes does American Airlines operate?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM airlines AS T1 JOIN routes AS T2 ON T1.alid  =  T2.alid WHERE T1.name  =  'American Airlines'"
+    },
+    {
+      "question_id": 360,
+      "db_id": "flight_4",
+      "question": "Find the number of routes whose destination airports are in Canada.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM airports AS T1 JOIN routes AS T2 ON T1.apid  =  T2.dst_apid WHERE country  =  'Canada'"
+    },
+    {
+      "question_id": 361,
+      "db_id": "flight_4",
+      "question": "How many routes end in a Canadian airport?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM airports AS T1 JOIN routes AS T2 ON T1.apid  =  T2.dst_apid WHERE country  =  'Canada'"
+    },
+    {
+      "question_id": 362,
+      "db_id": "flight_4",
+      "question": "Find the number of different airports which are the destinations of the American Airlines.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(DISTINCT dst_apid) FROM airlines AS T1 JOIN routes AS T2 ON T1.alid  =  T2.alid WHERE T1.name  =  'American Airlines'"
+    },
+    {
+      "question_id": 363,
+      "db_id": "flight_4",
+      "question": "Find the number of routes with destination airports in Italy.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM routes AS T1 JOIN airports AS T2 ON T1.dst_apid  =  T2.apid WHERE T2.country  =  'Italy'"
+    },
+    {
+      "question_id": 364,
+      "db_id": "flight_4",
+      "question": "What is the number of routes whose destinations are Italian airports?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM routes AS T1 JOIN airports AS T2 ON T1.dst_apid  =  T2.apid WHERE T2.country  =  'Italy'"
+    },
+    {
+      "question_id": 365,
+      "db_id": "flight_4",
+      "question": "Return the number of routes with destination airport in Italy operated by the airline with name 'American Airlines'.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM routes AS T1 JOIN airports AS T2 ON T1.dst_apid  =  T2.apid JOIN airlines AS T3 ON T1.alid  =  T3.alid WHERE T2.country  =  'Italy' AND T3.name  =  'American Airlines'"
+    },
+    {
+      "question_id": 366,
+      "db_id": "flight_4",
+      "question": "Find the number of routes that have destination John F Kennedy International Airport.",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM airports AS T1 JOIN routes AS T2 ON T1.apid  =  T2.dst_apid WHERE T1.name  =  'John F Kennedy International Airport'"
+    },
+    {
+      "question_id": 367,
+      "db_id": "flight_4",
+      "question": "What is the number of routes that end at John F Kennedy International Airport?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM airports AS T1 JOIN routes AS T2 ON T1.apid  =  T2.dst_apid WHERE T1.name  =  'John F Kennedy International Airport'"
+    },
+    {
+      "question_id": 368,
+      "db_id": "flight_4",
+      "question": "How many routes go from the United States to Canada?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM routes WHERE dst_apid IN (SELECT apid FROM airports WHERE country  =  'Canada') AND src_apid IN (SELECT apid FROM airports WHERE country  =  'United States')"
+    },
+    {
+      "question_id": 369,
+      "db_id": "architecture",
+      "question": "How many architects haven't built a mill before year 1850?",
+      "evidence": "",
+      "difficulty": "",
+      "sql": "SELECT count(*) FROM architect WHERE id NOT IN ( SELECT architect_id FROM mill WHERE built_year  <  1850 );"
+    }
+  ]

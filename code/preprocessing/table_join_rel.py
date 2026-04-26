@@ -7,7 +7,7 @@ import os
 import argparse
 import pandas as pd
 from datasketch import MinHash, MinHashLSH
-from utils import read_json, read_pickle, write_json, get_corpus, merge, get_skip_idxs, get_corpus_schema, embed, sql_to_tables
+from utils import  embed
 import os
 import sqlite3
 from tqdm import tqdm
@@ -116,7 +116,7 @@ def get_uniqueness(dataset: str, mode='dev'):
     t_name = tables[t]['table_name']
 
     csv_path = f"../../dataset/datalake/{dataset}/{t}.csv"
-    potential_df = pd.read_csv(csv_path)
+    potential_df = pd.read_csv(csv_path, index_col=0)
 
     for i in range(len(tables[t]['column_names_original'])):
       c = tables[t]['column_names_original'][i]

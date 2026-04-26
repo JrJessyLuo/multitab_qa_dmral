@@ -4,11 +4,12 @@ import tqdm
 from tqdm import tqdm
 from collections import defaultdict
 import re
+import os
 import json
 import argparse
 from uuid import uuid4
-from llm_tool import run_structured_prompt
-from utils import read_json, write_json
+# from llm_tool import run_structured_prompt
+# from utils.tool import read_json, write_json
 
 
 def remove_trailing_number(s):
@@ -30,7 +31,7 @@ def process_dataset(dataset_name):
     # Process each CSV file
     for f in tqdm(fls, total=len(fls)):
         updated_title_name = f.split('/')[-1][:-4]
-        df = pd.read_csv(f)
+        df = pd.read_csv(f,index_col=0)
         
         headers = list(df.columns)
 
@@ -55,7 +56,9 @@ def process_dataset(dataset_name):
         # print(table_dict)
 
     # Save output
-    output_path = f"../../dataset/data/{dataset_name}_dlr/dev_tables.json"
+    output_path = f"../../dataset/data/{dataset_name}/dev_tables.json"
+    # Create directory if it does not exist
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w") as outfile:
         json.dump(all_dict, outfile, indent=2)
     print(f"Saved to {output_path}")
