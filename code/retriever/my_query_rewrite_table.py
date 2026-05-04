@@ -1,7 +1,7 @@
 from langchain_core.prompts import PromptTemplate
 import utils
-from utils import prompt, model_config
-from model_config import llm
+from utils import prompt
+from utils.model_config import llm
 import json
 import re
 import time

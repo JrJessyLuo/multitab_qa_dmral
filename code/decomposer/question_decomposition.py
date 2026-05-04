@@ -10,7 +10,7 @@ import pandas as pd
 import ast
 import utils
 from utils import prompt, model_config
-from model_config import llm
+from utils.model_config import llm
 import argparse
 import time
 import openai
@@ -254,6 +254,7 @@ def decompose_ours(tmp):
   
       start_time = time.time()
       flag = True
+      # current_output = obtain_decomposed_questions_enhanced(q, output_q_words)
       try:
         current_output = obtain_decomposed_questions_enhanced(q, output_q_words)
         total_cost_time += time.time() - start_time

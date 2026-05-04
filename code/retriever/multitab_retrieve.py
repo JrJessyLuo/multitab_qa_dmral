@@ -12,56 +12,58 @@ from ragatouille import RAGPretrainedModel
 import string
 import argparse
 import time
+from utils import tool
+from pathlib import Path
+import pickle
 
+# def identify_overlap_tables(jaccard_json_path, unique_json_path, csim_json_path, cemb_sim_json_path, dataset_name, sim_threshold=0.90, unique_threshold=0.98):
+#     tmp_str = json.load(open(jaccard_json_path, 'rb'))
+#     unique_str = json.load(open(unique_json_path, 'rb'))
+#     csim_str = json.load(open(csim_json_path, 'rb'))
+#     cembsim_str = json.load(open(cemb_sim_json_path, 'rb'))
+#     valid_tab_pairs = []
+#     cemb_threshold_dict = {'spiderdl': 0.55, 'birddl':0.65}
 
-def identify_overlap_tables(jaccard_json_path, unique_json_path, csim_json_path, cemb_sim_json_path, dataset_name, sim_threshold=0.90, unique_threshold=0.98):
-    tmp_str = json.load(open(jaccard_json_path, 'rb'))
-    unique_str = json.load(open(unique_json_path, 'rb'))
-    csim_str = json.load(open(csim_json_path, 'rb'))
-    cembsim_str = json.load(open(cemb_sim_json_path, 'rb'))
-    valid_tab_pairs = []
-    cemb_threshold_dict = {'spiderdl': 0.55, 'birddl':0.65}
-
-    for key, tab_pair_items in tmp_str.items():
-        for tab_pair, score in tab_pair_items.items():
+#     for key, tab_pair_items in tmp_str.items():
+#         for tab_pair, score in tab_pair_items.items():
             
-            if score>sim_threshold:    
-                tab_arrs = tab_pair.split('-')
-                if len(tab_arrs)!=2:
-                    if '-'.join(tab_arrs[:2]) in unique_str:
-                        unique_ratio = max(unique_str['-'.join(tab_arrs[:2])], unique_str['-'.join(tab_arrs[2:])])
-                    else:
-                        unique_ratio = max(unique_str[tab_arrs[0]], unique_str['-'.join(tab_arrs[1:])])
-                else:
-                    unique_ratio = max(unique_str[tab_arrs[0]], unique_str[tab_arrs[1]])
-                if unique_ratio<unique_threshold:continue
-                col_sim = csim_str[key][tab_pair]          
+#             if score>sim_threshold:    
+#                 tab_arrs = tab_pair.split('-')
+#                 if len(tab_arrs)!=2:
+#                     if '-'.join(tab_arrs[:2]) in unique_str:
+#                         unique_ratio = max(unique_str['-'.join(tab_arrs[:2])], unique_str['-'.join(tab_arrs[2:])])
+#                     else:
+#                         unique_ratio = max(unique_str[tab_arrs[0]], unique_str['-'.join(tab_arrs[1:])])
+#                 else:
+#                     unique_ratio = max(unique_str[tab_arrs[0]], unique_str[tab_arrs[1]])
+#                 if unique_ratio<unique_threshold:continue
+#                 col_sim = csim_str[key][tab_pair]          
                 
                 
-                if col_sim<0.5:continue
-                cemb_sim = cembsim_str[key][tab_pair]
+#                 if col_sim<0.5:continue
+#                 cemb_sim = cembsim_str[key][tab_pair]
                 
-                if cemb_sim<cemb_threshold_dict[dataset_name]:continue
+#                 if cemb_sim<cemb_threshold_dict[dataset_name]:continue
                 
 
-                all_tab_names = []
-                for i in range(len(tab_arrs)):
-                    # all_tab_names.append(tab_arrs[i])
-                    if '#sep#' in tab_arrs[i]:
-                        all_tab_names.append('#sep#'.join( tab_arrs[i].split('#sep#')[:-1] ))
-                    # if '#sep#' in tab_arrs[i]:
-                    #     all_tab_names.append( tab_arrs[i].split('#sep#')[1].lower() )
-                if len(all_tab_names) != 2:
-                    print('error ---')
-                    print(all_tab_names, tab_arrs, tab_pair)
-                    continue            
-                # assert len(all_tab_names) == 2
+#                 all_tab_names = []
+#                 for i in range(len(tab_arrs)):
+#                     # all_tab_names.append(tab_arrs[i])
+#                     if '#sep#' in tab_arrs[i]:
+#                         all_tab_names.append('#sep#'.join( tab_arrs[i].split('#sep#')[:-1] ))
+#                     # if '#sep#' in tab_arrs[i]:
+#                     #     all_tab_names.append( tab_arrs[i].split('#sep#')[1].lower() )
+#                 if len(all_tab_names) != 2:
+#                     print('error ---')
+#                     print(all_tab_names, tab_arrs, tab_pair)
+#                     continue            
+#                 # assert len(all_tab_names) == 2
                 
-                updated_tab_pair = sorted(all_tab_names)
-                if updated_tab_pair not in valid_tab_pairs:
-                    valid_tab_pairs.append(updated_tab_pair)
+#                 updated_tab_pair = sorted(all_tab_names)
+#                 if updated_tab_pair not in valid_tab_pairs:
+#                     valid_tab_pairs.append(updated_tab_pair)
 
-    return valid_tab_pairs
+#     return valid_tab_pairs
 
 
 def find_valid_paths_from_pairs(matrix, neighbors):
@@ -184,8 +186,10 @@ if __name__=="__main__":
 
     tables = read_json(f'../../dataset/data/{dataset_name}/dev_tables.json')
 
+    filtered_tabs = pickle.load(open(f'../../dataset/data/{dataset_name}/delete.pkl', 'rb'))
+
     # schema_elements = {tables[t]['table_name_original']: serialize_table(tables[t]).strip() for t in tables}
-    schema_elements = {t: serialize_table(tables[t]).strip() for t in tables}
+    schema_elements = {t: serialize_table(tables[t]).strip() for t in tables if t not in filtered_tabs}
 
 
     faiss_fpath  = f"index/{dataset_name}_faiss_store"
@@ -198,28 +202,53 @@ if __name__=="__main__":
     jaccard_json_path = f'../../dataset/data/{dataset_name}/dev_jaccard.json'
     uniqueness_json_path = f'../../dataset/data/{dataset_name}/dev_uniqueness.json'
     
-    if args.dataset_name == 'spiderdl':
-        col_sim_path = f'../../dataset/data/{dataset_name}/exact_col_sim.json'
-        col_emb_sim_path = f'../../dataset/data/{dataset_name}/semantic_col_sim.json'
-    else:
-        col_sim_path = f'../../dataset/data/{dataset_name}/dev_exact_col_sim.json'
-        col_emb_sim_path = f'../../dataset/data/{dataset_name}/dev_semantic_col_sim.json'
-    estimated_overlap_tabpairs = identify_overlap_tables(jaccard_json_path, uniqueness_json_path, col_sim_path, col_emb_sim_path, dataset_name, 0.98)
+    # if args.dataset_name == 'spiderdl':
+    #     col_sim_path = f'../../dataset/data/{dataset_name}/exact_col_sim.json'
+    #     col_emb_sim_path = f'../../dataset/data/{dataset_name}/semantic_col_sim.json'
+    # else:
+    col_sim_path = f'../../dataset/data/{dataset_name}/dev_exact_col_sim.json'
+    col_emb_sim_path = f'../../dataset/data/{dataset_name}/dev_semantic_col_sim.json'
+    cache_path = f"../../dataset/data/{dataset_name}/dev_valid_overlap_table_pairs.pkl"
 
-    if dataset_name in ['birddl']:
-        evidence_path = f'../{dataset_name}/output/evidence.pkl'
+    print('begin to filter valid table paris....')
+    if os.path.exists(cache_path):
+        estimated_overlap_tabpairs = pickle.load(open(cache_path, "rb"))
+    else:
+        estimated_overlap_tabpairs = tool.identify_overlap_tables(
+            jaccard_json_path,
+            uniqueness_json_path,
+            col_sim_path,
+            col_emb_sim_path,
+            dataset_name,
+            sim_threshold=0.98,
+            unique_threshold=0.98,
+        )
+        pickle.dump(estimated_overlap_tabpairs, open(cache_path, "wb"))
+    print(f'end with valid table paris {len(estimated_overlap_tabpairs)}')
+
+    if dataset_name in ['birddl','birdwild']:
+        evidence_path = f'../../dataset/data/{dataset_name}/evidence.pkl'
         question_evidence_map_dict = pickle.load(open(evidence_path, 'rb'))
 
     decomposed_data = pickle.load(open(decp_fpath, 'rb'))
     if type(decomposed_data) == list:
         decomposed_data = decomposed_data[0]
 
-    training_path_dict = {'birddl':'checkpoint/birddl/colbert',\
-            'spiderdl': "checkpoint/spiderdl/colbert"}
+    BASE_DIR = Path(__file__).resolve().parents[1]
+
+    training_path_dict = {
+        "birdwild": BASE_DIR / "checkpoint" / "birddl" / "colbert",
+        "spiderwild": BASE_DIR / "checkpoint" / "spiderdl" / "colbert",
+        "birdwildt": BASE_DIR / "checkpoint" / "birddl" / "colbert",
+        "spiderwildt": BASE_DIR / "checkpoint" / "spiderdl" / "colbert",
+    }
+
+    # training_path_dict = {'birdwild':'checkpoint/birddl/colbert',\
+    #         'spiderwild': "checkpoint/spiderdl/colbert"}
 
     if rerank:
         training_path = training_path_dict[dataset_name]
-        RAG_our = RAGPretrainedModel.from_pretrained(training_path)
+        RAG_our = RAGPretrainedModel.from_pretrained(str(training_path))
         tokenizer = AutoTokenizer.from_pretrained("colbert-ir/colbertv2.0")
 
 
@@ -232,7 +261,11 @@ if __name__=="__main__":
         singlehop_time += time.time() - start_time
 
         # single_hop_res = [_[0].split()[1].lower() for _ in res]
-        single_hop_res = [_[-1] for _ in res]
+        # single_hop_res = [_[-1] for _ in res]
+        single_hop_res = [
+            item[-1]["table_name"] if isinstance(item[-1], dict) else item[-1]
+            for item in res
+        ]
 
         multi_hop_retrieved_tables, multi_hop_retrieved_table_scores, min_val, max_hop = [], [], np.inf, -1
         multihop_norerank_tables = []
@@ -243,7 +276,7 @@ if __name__=="__main__":
         for i in range(len(subqs)):
             subq = subqs[i]
 
-            if dataset_name in ['birddl']:
+            if dataset_name in ['birdwild']:
                 keywords = []
                 if question in question_evidence_map_dict:
                     keywords = question_evidence_map_dict[question].get(subq, [])
@@ -294,10 +327,19 @@ if __name__=="__main__":
 
         retrieved_schemas = []
         start_time = time.time()
-        output_tables, output_paths = retrieve_multi_table_path(subqs, multi_hop_retrieved_tables, multi_hop_retrieved_table_scores, estimated_overlap_tabpairs, top_k=10)
+        # output_tables, output_paths = retrieve_multi_table_path(subqs, multi_hop_retrieved_tables, multi_hop_retrieved_table_scores, estimated_overlap_tabpairs, top_k=10)
+        if len(subqs) == 0 or len(multi_hop_retrieved_tables) == 0:
+            output_tables = single_hop_res[:10]
+            output_paths = []
+        else:
+            output_tables, output_paths = retrieve_multi_table_path(
+                subqs,
+                multi_hop_retrieved_tables,
+                multi_hop_retrieved_table_scores,
+                estimated_overlap_tabpairs,
+                top_k=10
+            )
         multihop_time += time.time() - start_time
-
-        
 
         output_res[question] = {'single_hop':single_hop_res, 'multi_hop':output_tables, \
             'multi_hop_tables':multi_hop_retrieved_tables, \

@@ -14,6 +14,22 @@ from tqdm import tqdm
 from collections import defaultdict
 import json
 
+def read_csv_auto_index(path, **kwargs):
+    """
+    Read CSV files robustly.
+
+    If the first column is an accidentally saved pandas index column
+    such as 'Unnamed: 0', read it as index_col=0.
+    Otherwise, read the CSV normally.
+    """
+    header = pd.read_csv(path, nrows=0, **kwargs)
+    first_col = str(header.columns[0])
+
+    if first_col.startswith("Unnamed"):
+        return pd.read_csv(path, index_col=0, **kwargs)
+
+    return pd.read_csv(path, **kwargs)
+
 
 def read_json(file_path):
     with open(file_path, "r") as f:
@@ -59,7 +75,7 @@ def compute_jaccard(dataset: str, mode='dev'):
         table_name = table_info['table_name']
 
         try:
-          potential_df = pd.read_csv(f"../../dataset/datalake/{dataset}/{tid}.csv", index_col=0)
+          potential_df = read_csv_auto_index(f"../../dataset/datalake/{dataset}/{tid}.csv")
         except Exception as e:
           print(f"[ERROR] Failed to load table file")
           continue  # Skip this table and proceed
@@ -116,7 +132,7 @@ def get_uniqueness(dataset: str, mode='dev'):
     t_name = tables[t]['table_name']
 
     csv_path = f"../../dataset/datalake/{dataset}/{t}.csv"
-    potential_df = pd.read_csv(csv_path, index_col=0)
+    potential_df = read_csv_auto_index(csv_path)
 
     for i in range(len(tables[t]['column_names_original'])):
       c = tables[t]['column_names_original'][i]

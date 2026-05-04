@@ -11,6 +11,21 @@ from uuid import uuid4
 # from llm_tool import run_structured_prompt
 # from utils.tool import read_json, write_json
 
+def read_csv_auto_index(path, **kwargs):
+    """
+    Read CSV files robustly.
+
+    If the first column is an accidentally saved pandas index column
+    such as 'Unnamed: 0', read it as index_col=0.
+    Otherwise, read the CSV normally.
+    """
+    header = pd.read_csv(path, nrows=0, **kwargs)
+    first_col = str(header.columns[0])
+
+    if first_col.startswith("Unnamed"):
+        return pd.read_csv(path, index_col=0, **kwargs)
+
+    return pd.read_csv(path, **kwargs)
 
 def remove_trailing_number(s):
     # Match ending digits and remove them if found
@@ -31,7 +46,11 @@ def process_dataset(dataset_name):
     # Process each CSV file
     for f in tqdm(fls, total=len(fls)):
         updated_title_name = f.split('/')[-1][:-4]
-        df = pd.read_csv(f,index_col=0)
+        try:
+            df = read_csv_auto_index(f)
+        except:
+            print(f'error {updated_title_name}')
+            continue
         
         headers = list(df.columns)
 

@@ -8,6 +8,7 @@ import json
 import time
 import argparse
 import pickle
+import os
 
 
 class UnionFind:
@@ -118,7 +119,7 @@ def compute_best_group_v2(dev_json, decomposed_json, score_pkl, table2group, out
             #     print(j, dq[j], schema_scores)
 
             for schema_key, score in schema_scores.items():
-                table, col = schema_key.split(":")
+                table, col = schema_key.split(":", 1)
                 group_id = table2group.get(table.lower(), table.lower())  # fallback to individual table if no group
 
                 if j not in group_scores[group_id] or score > group_scores[group_id][j][1]:
@@ -206,7 +207,7 @@ if __name__=='__main__':
     # print(time.time() - start_time)
 
     grp_path = f"{basic_dir}/wordlist"
-    if not os.path.exist(grp_path):
+    if not os.path.exists(grp_path):
         os.makedirs(grp_path)
 
     pickle.dump(all_output_res, open(f'{grp_path}/{dataset_name}_meta.pkl','wb'))

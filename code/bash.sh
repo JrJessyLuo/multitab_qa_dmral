@@ -9,7 +9,6 @@ dataset_name='xx'
 # Step into the preprocessing directory
 cd code/preprocessing
 python dump_raw_table.py --dataset "$dataset_name"
-# python clean_table.py --dataset "$dataset_name"
 python table_join_rel.py --dataset "$dataset_name"
 python table_union_rel.py --dataset "$dataset_name"
 

@@ -22,8 +22,11 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     dataset_name = args.dataset_name
-    tables = read_json(f'../../datasets/data/{dataset_name}/dev_tables.json')
+    tables = read_json(f'../../dataset/data/{dataset_name}/dev_tables.json')
 
+    # schema_elements = {t: serialize_table(tables[t]).strip() for t in tables}
+
+    # schema_elements = {tables[t]['table_name_original']: serialize_table(tables[t]).strip() for t in tables}
     schema_elements = {t: serialize_table(tables[t]).strip() for t in tables}
 
 

@@ -14,8 +14,7 @@ from tqdm import tqdm
 from transformers import AutoTokenizer, AutoModel
 import pickle
 from sql_metadata import Parser
-import utils
-from utils import dataset_config
+
 
 def set_seed(seed):
   random.seed(seed)
@@ -204,9 +203,11 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser()
   parser.add_argument('--dataset', type=str, required=True)
   parser.add_argument('--query_decompose',  action='store_true')
+  parser.add_argument('--mode', type=str, default = '')
   args = parser.parse_args()
   set_seed(1234)
-  mode = 'full'
+  # mode = 'full'
+  mode = args.mode
 
   model = ['tapas', 'contriever'][1]
   dataset = args.dataset
@@ -222,8 +223,9 @@ if __name__ == '__main__':
       q_fn, t_fn = f'../../dataset/data/{dataset}/contriever/q_decomp.npy', f'../../dataset/data/{dataset}/contriever/t_decomp_f.npy'
   else:
     q_fn, t_fn = f'../../dataset/data/{dataset}/contriever/q.npy', f'../../dataset/data/{dataset}/contriever/t.npy'
-  
-  qs = read_json(f'../../dataset/data/{dataset}/dev.json')
+
+  dev_json_path = f"../../dataset/data/{dataset}/dev.json"
+  qs = read_json(dev_json_path)
   qs = [q['question'] for q in qs]
 
   if dq:

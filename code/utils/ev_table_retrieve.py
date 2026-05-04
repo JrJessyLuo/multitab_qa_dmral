@@ -120,9 +120,9 @@ def get_prediction_list(retrieved_tabs, topk):
     return list(retrieved_tabs[:topk])
 
 def transform(name):
-    parts = name.split('#sep#')
-    if len(parts) >= 3:
-        return '#sep#'.join(parts[1:]) 
+    # parts = name.split('#sep#')
+    # if len(parts) >= 3:
+    #     return '#sep#'.join(parts[1:]) 
     return name
 
 
@@ -141,18 +141,20 @@ def main():
 
     q_table_map = load_pickle(args.qtab_fpath)
 
+    union_path = f"../../dataset/data/{dataset_name}/dev_unionable_clusters.json"
+
     missing_tab_map = {}
-    if os.path.exists(args.missing_tab_fpath):
-        missing_tab_map = load_pickle(args.missing_tab_fpath)
+    if os.path.exists(args.save_fpath):
+        missing_tab_map = load_pickle(args.save_fpath)
     else:
-        print(f"Warning: missing_tab_fpath does not exist: {args.missing_tab_fpath}")
+        print(f"Warning: save_fpath does not exist: {args.save_fpath}")
 
     question_json_fpath = f"../../dataset/data/{dataset_name}/dev.json"
 
     question_json = read_json(question_json_fpath)
 
     label_csv_path = f"../../dataset/label/{dataset_name}.csv"
-
+    unionable_items = json.load(open(union_path, 'r'))
 
     data_df = pd.read_csv(label_csv_path)
 
@@ -164,7 +166,7 @@ def main():
         if not rows:
             continue
 
-        related_tabs = rows[0].split(" [SEP] ")
+        related_tabs = rows[0].split(" [TAB] ")
         current_infos[question] = {"gt": related_tabs}
 
     predicted_tabs = []
@@ -182,7 +184,13 @@ def main():
                 if tab not in singlehop_tabs:
                     singlehop_tabs.append(tab)
 
-        predicted_tabs.append([transform(_) for _ in singlehop_tabs])
+        pred_tabs = []
+        for _ in singlehop_tabs:
+            pred_tabs.append(_)
+            if _ in unionable_items['table_to_unionable_tables']:
+                pred_tabs.extend(unionable_items['table_to_unionable_tables'][_])
+
+        predicted_tabs.append([transform(_) for _ in pred_tabs])
         all_related_tabs.append(current_infos[question]["gt"])
 
 
